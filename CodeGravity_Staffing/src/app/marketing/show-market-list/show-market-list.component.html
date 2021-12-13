@@ -1,9 +1,15 @@
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
-(click)="addClick()"  data-backdrop="static" data-keyboard="false">
+<tr>
+  <td> <div class="div float-left m-2  " >  
+    Choose  Recruiter :  
+    <select>  
+            <option *ngFor="let prod of marketinglist">{{prod.Consult_id}} </option>  
+    </select> 
+  </div></td>
+  <td style="align-items: flex-end;">
+    <button type="button" class="btn btn-primary float-right m-12" data-bs-toggle="modal" data-bs-target="#exampleModal"
+ data-backdrop="static" data-keyboard="false" style="align-items:Right">
     
-    Add Employee
+    Add Marketing 
   </button>
   
   <!-- Modal -->
@@ -11,9 +17,9 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-          (click)="closeClick()"
+          
           ></button>
         </div>
         <!-- <div class="modal-body">
@@ -27,27 +33,37 @@
       </div>
     </div>
   </div>
+  </td>
+</tr>
 
-<table class="table table-striped" >
 
-    <thead style="border: 1pt solid black; color:rgb(253, 254, 255);background: rgb(112, 101, 134);">
+
+
+<table class="table table-striped">
+
+  <thead style="border: 1pt solid black; color:rgb(253, 254, 255);background: rgb(112, 101, 134);">
      <tr>
       <th>Id</th>
-      <th>Name</th> 
-      <th>Email</th>      
-      <th>Phone</th>
-      <th>Work Region</th>
+      <th>Consultant Name</th> 
+      <th>POS</th>      
+      <th>Technology</th>
+      <th>Vendor</th>
+      <th>Marketing Start Date</th>
+     
       
-      <th>Edit/Delete</th>
+      <th>Options</th>
      </tr>    
   </thead>
   <tbody>
-    <tr  class="bb" style="  border: 1pt solid black;" *ngFor="let dataitem of consultantlist">
-          <td>{{dataitem.Emp_Id}}</td>
-          <td>{{dataitem.Emp_Name}}</td>
-          <td>{{dataitem.Emp_Email}}</td>
-          <td>{{dataitem.Emp_Phone}}</td>
-          <td>{{dataitem.Emp_work_Region}}</td>
+  
+      <tr class="bb" style="  border: 1pt solid black;" *ngFor="let dataitem of marketinglist">
+        <td>{{dataitem.Id}}</td>
+          <td>{{dataitem.Consult_id}}</td>
+          <td>{{dataitem.Assigned_Sales_Recruiter}}</td>
+          <td>{{dataitem.Marketing_Tech}}</td>
+          <td>{{dataitem.Submited_Vendor}}</td>
+          <td>{{dataitem.Marketing_Start_Date}}</td>
+          
           
           <td>
               <button type="button" class="btn btn-light mr-1">

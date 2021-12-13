@@ -12,7 +12,13 @@ import {SharedService} from './shared.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { ShowConsultComponent } from './consultant/show-consult/show-consult.component';
-import { ShowEmpComponent } from './employee/show-emp/show-emp.component'
+import { ShowEmpComponent } from './employee/show-emp/show-emp.component';
+import { RouterModule } from '@angular/router';
+import { IncentiveComponent } from './incentive/incentive.component';
+import { MarketingComponent } from './marketing/marketing.component';
+import { PurchaseorderComponent } from './purchaseorder/purchaseorder.component';
+import { ShowMarketListComponent } from './marketing/show-market-list/show-market-list.component';
+import { AddEditMarketComponent } from './marketing/add-edit-market/add-edit-market.component';
 
 
 
@@ -24,13 +30,18 @@ import { ShowEmpComponent } from './employee/show-emp/show-emp.component'
     ConsultantComponent,
     AddEditConsulComponent,
     ShowConsultComponent,
-    ShowEmpComponent
+    ShowEmpComponent,
+    IncentiveComponent,
+    MarketingComponent,
+    PurchaseorderComponent,
+    ShowMarketListComponent,
+    AddEditMarketComponent
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,ReactiveFormsModule,FormsModule
+    HttpClientModule,ReactiveFormsModule,FormsModule,RouterModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

@@ -1,19 +1,38 @@
-<div class="container">
+<div class="container" style="border: rgb(87, 6, 6) 1;">
     <h3> Staffing Management</h3>
-    <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark nav-item ">
 
         <ul class="navbar-nav">
             <!-- <li class="nav-item">
                 <button routerlink="" class="m-1 btn btn-light btn-outline-primary" Button> Home</button> 
             </li> -->
             <li class="nav-item">
-              <button routerlink="consultant"
-               class="m-1 btn btn-light btn-outline-primary" Button>Employee</button> 
+              <button  class="m-1 btn btn-light btn-outline-primary"  class="btn btn-light" Button>
+               <a [routerLink]="['/employee']" routerLinkActive="active" >Employee</a> 
+            
+            </button> 
             </li>
 
             <li class="nav-item">
-                <button routerlink="consultant"
-                 class="m-1 btn btn-light btn-outline-primary" Button>Consultant</button> 
+                <button 
+                 class="m-1 btn btn-light btn-outline-primary" class="btn btn-light"  Button>
+                 <a [routerLink]="['/consultant']" routerLinkActive="active">Consultant</a> </button> 
+            </li>
+            <li class="nav-item">
+                <button 
+                 class="m-1 btn btn-light btn-outline-primary" class="btn btn-light"  Button>
+                 <a [routerLink]="['/market']" routerLinkActive="active">Marketing List</a> </button> 
+            </li>
+            <li class="nav-item">
+                <button 
+                 class="m-1 btn btn-light btn-outline-primary" class="btn btn-light"  Button>
+                 <a [routerLink]="['/purchaseorder']" routerLinkActive="active">PO List</a> </button> 
+            </li>
+
+            <li class="nav-item">
+                <button 
+                 class="m-1 btn btn-light btn-outline-primary" class="btn btn-light"  Button>
+                 <a [routerLink]="['/incentive']" routerLinkActive="active">Incentives</a> </button> 
             </li>
 
         </ul>

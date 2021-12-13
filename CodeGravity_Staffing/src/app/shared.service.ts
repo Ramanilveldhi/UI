@@ -41,4 +41,9 @@ export class SharedService {
   deleteemployee(val:any){
     return this.http.delete(this.ApiUrl+"EmployeeMaster",val);
   }
+
+
+  getmarketinglist():Observable<any[]>{
+    return this.http.get<any>(this.ApiUrl+"/MarketingMaster")
+  }
 }
