@@ -1,44 +1,22 @@
-<tr>
-  <td> <div class="div float-left m-2  " >  
-    Choose  Recruiter :  
-    <select>  
-            <option *ngFor="let prod of marketinglist">{{prod.Consult_id}} </option>  
-    </select> 
-  </div></td>
-  <td style="align-items: flex-end;">
+
+<div class="row" style="padding-bottom: 1.5px;">
+  <div class="col-6">
+    <div class="div float-left m-2 " >  
+      Choose  Recruiter :  
+      <select [(ngModel)]="selectedLevel" (change)="selected()">
+              <option *ngFor="let emp of data"[ngValue]="emp">{{emp}} </option>  
+      </select> 
+    </div>
+  </div>
+  
+  <div class="col align-self-end" style="padding-left: 400px;">
     <button type="button" class="btn btn-primary float-right m-12" data-bs-toggle="modal" data-bs-target="#exampleModal"
  data-backdrop="static" data-keyboard="false" style="align-items:Right">
     
     Add Marketing 
   </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-          
-          ></button>
-        </div>
-        <!-- <div class="modal-body">
-          Launch demo modal
-          <app-add-edit-consul [dep]="dep" *ngif="ActivateAddEditEmployeeComp"></app-add-edit-consul>
-        </div> -->
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
-      </div>
-    </div>
   </div>
-  </td>
-</tr>
-
-
-
-
+</div>
 <table class="table table-striped">
 
   <thead style="border: 1pt solid black; color:rgb(253, 254, 255);background: rgb(112, 101, 134);">
@@ -58,10 +36,10 @@
   
       <tr class="bb" style="  border: 1pt solid black;" *ngFor="let dataitem of marketinglist">
         <td>{{dataitem.Id}}</td>
-          <td>{{dataitem.Consult_id}}</td>
+          <td>{{dataitem.Consult_Name}}</td>
           <td>{{dataitem.Assigned_Sales_Recruiter}}</td>
           <td>{{dataitem.Marketing_Tech}}</td>
-          <td>{{dataitem.Submited_Vendor}}</td>
+          <td>{{dataitem.Submitted_Vendor}}</td>
           <td>{{dataitem.Marketing_Start_Date}}</td>
           
           
