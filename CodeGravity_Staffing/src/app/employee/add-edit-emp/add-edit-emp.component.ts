@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AddEditEmpComponent implements OnInit {
 
   constructor() { }
-  @Input() dep:any;
+  @Input() emp:any;
 
   ngOnInit(): void {
   }
