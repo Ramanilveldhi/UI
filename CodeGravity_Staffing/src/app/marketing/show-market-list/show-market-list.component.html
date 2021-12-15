@@ -1,11 +1,13 @@
 
 <div class="row" style="padding-bottom: 1.5px;">
   <div class="col-6">
-    <div class="div float-left m-2 " >  
-      Choose  Recruiter :  
-      <select [(ngModel)]="selectedLevel" (change)="selected()">
-              <option *ngFor="let emp of data"[ngValue]="emp">{{emp}} </option>  
-      </select> 
+    <div class="div float-left m-2 ">
+      Choose  Recruiter :
+      <select [(ngModel)]="selectedValue" (change)="onRcruiterChange($event)">
+        <option class="dropdown-item" disabled selected value="undefined">Select Recruiter</option>
+        <option *ngFor="let item of data" [value]="item.Emp_Name">{{item.Emp_Name}}</option>
+      </select>
+
     </div>
   </div>
   
@@ -34,7 +36,7 @@
   </thead>
   <tbody>
   
-      <tr class="bb" style="  border: 1pt solid black;" *ngFor="let dataitem of marketinglist">
+      <tr class="bb" style="  border: 1pt solid black;" *ngFor="let dataitem of tempMarklist">
         <td>{{dataitem.Id}}</td>
           <td>{{dataitem.Consult_Name}}</td>
           <td>{{dataitem.Assigned_Sales_Recruiter}}</td>
@@ -62,4 +64,3 @@
   </tbody>
   
   </table>
-  
