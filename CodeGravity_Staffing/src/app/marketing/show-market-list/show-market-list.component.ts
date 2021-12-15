@@ -12,14 +12,14 @@ export class ShowMarketListComponent implements OnInit {
   constructor(private service :SharedService) { };
   marketinglist:any=[];
    empList:any=[];
-   tempEmplist:any=[];
-   data:Array<Object> = [
-    {Emp_Id: 0, Emp_Name: "Select"}
-];
-selectedLevel:any;
+  tempMarklist: any = [];
+  data: any = [];
+  selectedValue:any;
 
-selected(){
-  alert(this.selectedLevel.name)
+  onRcruiterChange(item: any) {
+    const value = item.target.value;
+    this.tempMarklist = this.marketinglist;
+    this.tempMarklist = this.tempMarklist.filter((marketing: any) => marketing.Assigned_Sales_Recruiter === value);
 }
   ngOnInit(): void {
     this.refreshmarketingList();
@@ -29,24 +29,16 @@ selected(){
 
   refreshmarketingList(){
     this.service.getmarketinglist().subscribe((val: any)=>{
-      this.marketinglist=val;
+      this.marketinglist = val;
+      this.tempMarklist = this.marketinglist;
     });
   }
 
   getemployeename(){
     this.service.getemployeelist().subscribe((val: any)=>{
       this.empList=val;
-      this.data=this.empList;
+      this.data = this.empList;
     });
   }
-  onOptionsSelected(id:any){   
-    
-    this.data = this.data.filter((abc:any)=>abc.Emp_Id==id
-
-    )
 
   }
-
-
-
-}
