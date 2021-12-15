@@ -11,5 +11,5 @@ export class AddEditMarketComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  submitData(){}
 }

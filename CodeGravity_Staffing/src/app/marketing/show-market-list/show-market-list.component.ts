@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SharedService} from 'src/app/shared.service';
 
+
 @Component({
   selector: 'app-show-market-list',
   templateUrl: './show-market-list.component.html',
@@ -12,14 +13,14 @@ export class ShowMarketListComponent implements OnInit {
   constructor(private service :SharedService) { };
   marketinglist:any=[];
    empList:any=[];
-  tempMarklist: any = [];
+  tempMarketinglist: any = [];
   data: any = [];
   selectedValue:any;
 
-  onRcruiterChange(item: any) {
+  onRecruiterChange(item: any) {
     const value = item.target.value;
-    this.tempMarklist = this.marketinglist;
-    this.tempMarklist = this.tempMarklist.filter((marketing: any) => marketing.Assigned_Sales_Recruiter === value);
+    this.tempMarketinglist = this.marketinglist;
+    this.tempMarketinglist = this.tempMarketinglist.filter((marketinglistobj: any) => marketinglistobj.Assigned_Sales_Recruiter === value);
 }
   ngOnInit(): void {
     this.refreshmarketingList();
@@ -30,7 +31,7 @@ export class ShowMarketListComponent implements OnInit {
   refreshmarketingList(){
     this.service.getmarketinglist().subscribe((val: any)=>{
       this.marketinglist = val;
-      this.tempMarklist = this.marketinglist;
+      this.tempMarketinglist = this.marketinglist;
     });
   }
 
@@ -40,5 +41,6 @@ export class ShowMarketListComponent implements OnInit {
       this.data = this.empList;
     });
   }
+  
 
   }

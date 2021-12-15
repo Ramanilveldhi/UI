@@ -11,5 +11,5 @@ export class AddEditConsulComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  submitData(){}
 }

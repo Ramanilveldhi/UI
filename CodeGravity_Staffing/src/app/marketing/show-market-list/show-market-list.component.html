@@ -3,7 +3,7 @@
   <div class="col-6">
     <div class="div float-left m-2 ">
       Choose  Recruiter :
-      <select [(ngModel)]="selectedValue" (change)="onRcruiterChange($event)">
+      <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)">
         <option class="dropdown-item" disabled selected value="undefined">Select Recruiter</option>
         <option *ngFor="let item of data" [value]="item.Emp_Name">{{item.Emp_Name}}</option>
       </select>
@@ -14,18 +14,22 @@
   <div class="col align-self-end" style="padding-left: 400px;">
     <button type="button" class="btn btn-primary float-right m-12" data-bs-toggle="modal" data-bs-target="#exampleModal"
  data-backdrop="static" data-keyboard="false" style="align-items:Right">
-    
-    Add Marketing 
+  
+<a [routerLink]="['/addMarketing']" routerLinkActive="active"  class="nav-link" class="text-light">Add Marketing</a>   
+   
   </button>
   </div>
 </div>
+<!-- <ng2-smart-table [settings]="settings" [source]="tempMarketinglist"></ng2-smart-table>  -->
+
+
 <table class="table table-striped">
 
   <thead style="border: 1pt solid black; color:rgb(253, 254, 255);background: rgb(112, 101, 134);">
      <tr>
       <th>Id</th>
       <th>Consultant Name</th> 
-      <th>POS</th>      
+      <th>Recruiter Name</th>      
       <th>Technology</th>
       <th>Vendor</th>
       <th>Marketing Start Date</th>
@@ -36,7 +40,7 @@
   </thead>
   <tbody>
   
-      <tr class="bb" style="  border: 1pt solid black;" *ngFor="let dataitem of tempMarklist">
+      <tr class="bb" style="  border: 1pt solid black;" *ngFor="let dataitem of tempMarketinglist">
         <td>{{dataitem.Id}}</td>
           <td>{{dataitem.Consult_Name}}</td>
           <td>{{dataitem.Assigned_Sales_Recruiter}}</td>
@@ -63,4 +67,4 @@
       </tr>
   </tbody>
   
-  </table>
+</table>

@@ -46,4 +46,8 @@ export class SharedService {
   getmarketinglist():Observable<any[]>{
     return this.http.get<any>(this.ApiUrl+"/MarketingMaster")
   }
+
+  getplacementlist():Observable<any[]>{
+    return this.http.get<any>(this.ApiUrl+"/PlacementMaster")
+  }
 }

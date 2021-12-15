@@ -1,1 +1,105 @@
-<p>add-edit-market works!</p>
+<div >
+    <h4 style="color:rgb(253, 254, 255);background: rgb(112, 101, 134);" class="form-group col-md-12">Add Marketing details </h4>
+    
+    <form  (ngsubmit)= "submitData()" style="border: 0pt solid black; ">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputName">Consulatant Name</label>
+            <input type="text" class="form-control" id="inputName" placeholder="First name & Last Name" name="market_ConsulatantName" >
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail">Recruiter Name</label>
+            <input type="text" class="form-control" id="inputRecruiterName" placeholder="First name & Last Name" name="market_RecruiterName">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPhneNumber">Technology</label>
+            <input type="email" class="form-control" id="inputtechnology" placeholder="Java Devops,Salesforce,Qa automation" name="market_Technology"> 
+          </div>
+          
+        </div>        
+        
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputPhneNumber">Marketing Type</label>
+            <input type="email" class="form-control" id="inputmarketingtype" placeholder="Open to all/Dedicate" name="market_Isopentoall"> 
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPhneNumber">Marketing Start Date</label>
+            <input type="email" class="form-control" id="inputPstartdate" placeholder="MM/DD/YYYY" name="market_startdate"> 
+            
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPhneNumber">Vendor Name</label>
+            <input type="email" class="form-control" id="inputvendorname" placeholder="techsystems,Judge Group,etc" name="market_vendorname"> 
+          </div>
+         
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputPhneNumber">Client Name</label>
+              <input type="email" class="form-control" id="inputclientname" placeholder="" name="market_clientname"> 
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputPhneNumber">Rate Confirmation</label>
+              <input type="email" class="form-control" id="inputrateconfirm" placeholder="" name="market_rateconfirmation"> 
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputPhneNumber">Bill Rate</label>
+              <input type="email" class="form-control" id="inputbillrate" placeholder="" name="market_billrate"> 
+            </div>
+           
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputPhneNumber">Assignment Date</label>
+              <input type="text" class="form-control" id="inputassignmentdate" placeholder="MM/DD/YYYY" name="market_assignmentdate"> 
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputPhneNumber">Assignment Status</label>
+              <input type="text" class="form-control" id="inputAssignmentsatus" placeholder="" name="market_assignmentstatus"> 
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputPhneNumber">Interview Date</label>
+              <input type="text" class="form-control" id="inputinterviewdate" placeholder="MM/DD/YYYY" name="market_interviewdate"> 
+            </div>
+           
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputPhneNumber">Visa Status</label>
+              <input type="text" class="form-control" id="inputvisastatus" placeholder="" name="market_visastatus"> 
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputPhneNumber">Marketing Status</label>
+              <input type="text" class="form-control" id="inputmarketingstatus" placeholder="" name="market_marketingStatus"> 
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputPhneNumber">Marketing End Date</label>
+              <input type="text" class="form-control" id="inputenddate" placeholder="MM/DD/YYYY" name="market_interviewdate"> 
+            </div>
+           
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="inputPhneNumber">Notes</label>
+              <input type="text" class="form-control" id="inputnotes" placeholder="comments" name="market_visastatus"> 
+            </div>
+          </div>
+    
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Active
+            </label>
+          </div>
+        </div>
+       
+      </form>
+      <div></div>
+      
+      <button type="submit" class="btn btn-primary">
+        <a [routerLink]="['/consultant']" routerLinkActive="active"  class="nav-link" class="text-light">Add Consultant</a>  
+        </button>
+    </div>

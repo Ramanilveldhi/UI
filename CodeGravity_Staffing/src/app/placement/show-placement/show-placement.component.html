@@ -1,30 +1,12 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
-(click)="addClick()"  data-backdrop="static" data-keyboard="false">
-<a [routerLink]="['/addconsult']" routerLinkActive="active"  class="nav-link" class="text-light">Add Consultant</a> 
+  data-backdrop="static" data-keyboard="false">
+<a [routerLink]="['/addplacement']" routerLinkActive="active"  class="nav-link" class="text-light">Add Placement Details</a> 
     <!-- Add Employee -->
   </button>
   
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-          (click)="closeClick()"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <!-- <app-add-edit-consul [consl]="consl" *ngif="ActivateAddEditConsultComp"></app-add-edit-consul> -->
-        </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
-      </div>
-    </div>
-  </div>
+ 
+  
 
 <table class="table table-striped" >
 
@@ -32,24 +14,29 @@
      <tr>
       <th>Id</th>
       <th>Name</th> 
-      <th>Email</th>      
-      <th>Phone</th>
-      <!--<th>Address</th>-->
-      <th>Technology</th>
-      <!--<th>VisaStatus</th>-->
-      <!--<th>Status</th>-->
+      <th>Recruiter</th>      
+      <th>Project Start Date</th>
+      <th>Project Duration</th>
+      <th>Vendor Name</th>
+      <th>Client Name</th>
+      <th>Bill Rate</th>
+     
       <th>Options</th>
      </tr>    
   </thead>
   <tbody>
   
     <tr  class="bb" style="  border: 1pt solid black;"  *ngFor="let dataitem of consultantlist">
-          <td >{{dataitem.Consult_Id}}</td>
+          <td >{{dataitem.Id}}</td>
           <td>{{dataitem.Consult_Name}}</td>
-          <td>{{dataitem.Consult_Email}}</td>
-          <td>{{dataitem.Consult_Phone}}</td>
-         
-          <td>{{dataitem.Consult_Technology}}</td>
+          <td>{{dataitem.Placed_Sales_Recruiter}}</td>
+          <td>{{dataitem.Project_Start_Date}}</td>         
+          <td>{{dataitem.Project_Duration}}</td>
+          <td>{{dataitem.Vendor_Name}}</td>
+          <td>{{dataitem.Client_Name}}</td>
+          <td>{{dataitem.Bill_Rate}}</td>
+          
+          
          
          
           <td>
