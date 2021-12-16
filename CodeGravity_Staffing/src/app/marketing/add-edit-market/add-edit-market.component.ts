@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-add-edit-market',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEditMarketComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service :SharedService) { }
+
+  employeelist:any=[];
 
   ngOnInit(): void {
+
+    this.getEmployeeList();
+  
   }
   submitData(){}
+
+
+  getEmployeeList(){
+    this.service.getemployeelist().subscribe((val: any)=>{
+      this.employeelist=val;
+    });
+  }
+
 }

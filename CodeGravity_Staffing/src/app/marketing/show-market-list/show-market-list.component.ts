@@ -20,8 +20,11 @@ export class ShowMarketListComponent implements OnInit {
   onRecruiterChange(item: any) {
     const value = item.target.value;
     this.tempMarketinglist = this.marketinglist;
-    this.tempMarketinglist = this.tempMarketinglist.filter((marketinglistobj: any) => marketinglistobj.Assigned_Sales_Recruiter === value);
-}
+    if (value != 'undefined') {
+      this.tempMarketinglist = this.tempMarketinglist.filter((marketinglistobj: any) => marketinglistobj.Assigned_Sales_Recruiter === value);
+    }
+
+  }
   ngOnInit(): void {
     this.refreshmarketingList();
     this.getemployeename();

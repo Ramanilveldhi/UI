@@ -1,7 +1,7 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
 (click)="addClick()"  data-backdrop="static" data-keyboard="false">
-<a [routerLink]="['/addconsult']" routerLinkActive="active"  class="nav-link" class="text-light">Add Consultant</a> 
+<a [routerLink]="['/addconsult']" routerLinkActive="active"  class="nav-link" class="text-light">Add New Consultant</a> 
     <!-- Add Employee -->
   </button>
   
@@ -37,7 +37,7 @@
       <!--<th>Address</th>-->
       <th>Technology</th>
       <!--<th>VisaStatus</th>-->
-      <!--<th>Status</th>-->
+      <th>status</th>
       <th>Options</th>
      </tr>    
   </thead>
@@ -45,12 +45,12 @@
   
     <tr  class="bb" style="  border: 1pt solid black;"  *ngFor="let dataitem of consultantlist">
           <td >{{dataitem.Consult_Id}}</td>
-          <td>{{dataitem.Consult_Name}}</td>
+          <td>{{dataitem.Consult_Full_Name}}</td>
           <td>{{dataitem.Consult_Email}}</td>
           <td>{{dataitem.Consult_Phone}}</td>
          
           <td>{{dataitem.Consult_Technology}}</td>
-         
+          <td>{{dataitem.Consult_Status}}</td>
          
           <td>
             <button type="button" class="btn btn-light mr-1">
