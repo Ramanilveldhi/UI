@@ -19,6 +19,9 @@ import { AddEditMarketComponent } from './marketing/add-edit-market/add-edit-mar
 import { PlacementComponent } from './placement/placement.component';
 import { ShowPlacementComponent } from './placement/show-placement/show-placement.component';
 import { AddEditPlacementComponent } from './placement/add-edit-placement/add-edit-placement.component';
+import { TechnologiesComponent } from './technologies/technologies.component';
+import { ShowtechnologyComponent } from './technologies/showtechnology/showtechnology.component';
+import { AddEditTechnologyComponent } from './technologies/add-edit-technology/add-edit-technology.component';
 
 
 
@@ -37,7 +40,10 @@ import { AddEditPlacementComponent } from './placement/add-edit-placement/add-ed
     AddEditMarketComponent,
     PlacementComponent,
     ShowPlacementComponent,
-    AddEditPlacementComponent
+    AddEditPlacementComponent,
+    TechnologiesComponent,
+    ShowtechnologyComponent,
+    AddEditTechnologyComponent
    
   ],
   imports: [

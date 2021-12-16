@@ -50,4 +50,14 @@ export class SharedService {
   getplacementlist():Observable<any[]>{
     return this.http.get<any>(this.ApiUrl+"/PlacementMaster")
   }
+  gettechnologieslist():Observable<any[]>{
+    return this.http.get<any>(this.ApiUrl+"/TechnologiesMaster")
+  }
+
+  getsubmissionslist():Observable<any[]>{
+    return this.http.get<any>(this.ApiUrl+"/submissionsMaster")
+  }
+  getVisatypelist():Observable<any[]>{
+    return this.http.get<any>(this.ApiUrl+"/visatypeMaster")
+  }
 }
