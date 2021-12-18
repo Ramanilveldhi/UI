@@ -28,6 +28,9 @@ import { AddEditEntitlementComponent } from './entitlements/add-edit-entitlement
 import { SubmissionsComponent } from './submissions/submissions.component';
 import { ShowsubmissionsComponent } from './submissions/showsubmissions/showsubmissions.component';
 import { AddEditSubmissionComponent } from './submissions/add-edit-submission/add-edit-submission.component';
+import { CountryComponent } from './country/country.component';
+import { ShowcountryComponent } from './country/showcountry/showcountry.component';
+import { AddEditCountryComponent } from './country/add-edit-country/add-edit-country.component';
 
 
 
@@ -55,7 +58,10 @@ import { AddEditSubmissionComponent } from './submissions/add-edit-submission/ad
     AddEditEntitlementComponent,
     SubmissionsComponent,
     ShowsubmissionsComponent,
-    AddEditSubmissionComponent
+    AddEditSubmissionComponent,
+    CountryComponent,
+    ShowcountryComponent,
+    AddEditCountryComponent
    
   ],
   imports: [
