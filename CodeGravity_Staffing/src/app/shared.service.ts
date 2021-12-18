@@ -60,4 +60,13 @@ export class SharedService {
   getVisatypelist():Observable<any[]>{
     return this.http.get<any>(this.ApiUrl+"/visatypeMaster")
   }
+  getentitlementlist():Observable<any[]>{
+    return this.http.get<any>(this.ApiUrl+"/EntitlementMaster")
+  }
+  getcountrytlist():Observable<any[]>{
+    return this.http.get<any>(this.ApiUrl+"/CountryMaster")
+  }
+  getincentivetypetlist():Observable<any[]>{
+    return this.http.get<any>(this.ApiUrl+"/IncentiveMaster")
+  }
 }

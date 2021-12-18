@@ -5,7 +5,7 @@
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="inputName">First Name</label>
-        <input type="text" class="form-control" id="inputName" placeholder="First Name & Middle Name" name="emp_Name" 
+        <input type="text" class="form-control" id="inputName" placeholder="First Name" name="emp_Name" 
         [(ngModel)]=" addEmployee.emp_Name">
       </div>
       <div class="form-group col-md-4">
@@ -25,11 +25,7 @@
     </div>
 
     <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="inputPhneNumber">Phone Number</label>
-        <input type="email" class="form-control" id="inputPhneNumber" placeholder="Phone Number" name="emp_Phone" 
-        [(ngModel)]=" addEmployee.emp_Phone"> 
-      </div>
+     
       <div class="form-group col-md-4">
         <label for="inputPhneNumber">Phone Number</label>
         <input type="email" class="form-control" id="inputPhneNumber" placeholder="Phone Number" name="emp_Phone" 
@@ -37,11 +33,9 @@
       </div>
       <div class="form-group col-md-4">
         <label for="inputCountry">Country</label>
-        <select id="inputCountry" class="form-control">
-          <option selected>Choose...</option>
-          <option>India</option>
-          <option>United States of America</option>
-          <option>Canada</option>
+        <select [(ngModel)]="selectedValue" (change)="onCountryChange($event)" class="form-control">
+          <option class="dropdown-item" disabled selected value="undefined">Select </option>
+          <option *ngFor="let item of countrylist" [value]="item.Emp_Name">{{item.CountyName}}</option>
         </select>
       </div>
       <div class="form-group col-md-4">
