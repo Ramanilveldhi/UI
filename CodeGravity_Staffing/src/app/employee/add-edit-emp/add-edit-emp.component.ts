@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { addEmployee } from './add-edit-emp.model';
 import { SharedService } from 'src/app/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-edit-emp',
@@ -8,25 +9,31 @@ import { SharedService } from 'src/app/shared.service';
   styleUrls: ['./add-edit-emp.component.css']
 })
 export class AddEditEmpComponent implements OnInit {
-  addEmployee = new addEmployee();
-  constructor(private service: SharedService) { }
+ addEmployee = new addEmployee();
+  constructor(private service: SharedService,
+    private router: Router) { }
   @Input() emp: any;
 
   countrylist: any = [];
   entitlementlist: any = [];
   incentivetypelist: any = [];
-
-  selectedValue:any;
+  isChecked : boolean = false;
+  selectedCountryIdValue:any;
+  selectedRoleValue:any;
+  selectedIncentiveValue:any;
   ngOnInit(): void {
     this.getCountryList();
     this.getEntitlementList();
     this.getIncentivetypeList();
   }
-  submitData() {
-    this.service.addemployee(addEmployee).subscribe(res => {
-      console.log(res);
+  submitData(addEmp : addEmployee) {
+    addEmp.emp_work_Region = +(this.selectedCountryIdValue);
+    addEmp.emp_IncentiveType = +(this.selectedIncentiveValue);
+    addEmp.role_Id = +(this.selectedRoleValue);
+    addEmp.emp_Status = this.isChecked ? 1 : 0;
+    this.service.addemployee(addEmp).subscribe(res => {
+      this.router.navigate(['/employee']);
     })
-    //console.log(this.addEmployee);
   }
   getCountryList() {
     this.service.getcountrytlist().subscribe((val: any) => {
