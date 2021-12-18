@@ -5,24 +5,24 @@
   <form (ngsubmit)="submitData()" style="border: 0pt solid black; ">
     <div class="form-row">
       <div class="form-group col-md-4">
-        <label for="inputRole">Select Consultant</label>
+        <label for="inputRole">Consultant Name</label>
         <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)" class="form-control">
-          <option class="dropdown-item" disabled selected value="undefined">All</option>
+          <option class="dropdown-item" disabled selected value="undefined">Select Consultant</option>
           <option *ngFor="let item of consultantlist" [value]="item.Consult_Full_Name">{{item.Consult_Full_Name}}</option>
         </select>
 
       </div>
       <div class="form-group col-md-4">
-        <label for="inputRole">Select Recruiter to Assign</label>
+        <label for="inputRole">Recruiter to Assign</label>
         <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)" class="form-control">
-          <option class="dropdown-item" disabled selected value="undefined">All</option>
+          <option class="dropdown-item" disabled selected value="undefined">Select Recruiter</option>
           <option *ngFor="let item of employeelist" [value]="item.Emp_Name">{{item.Emp_Name}}</option>
         </select>
       </div>
       <div class="form-group col-md-4">
         <label for="inputRole">Technology</label>
         <select [(ngModel)]=" selectedValue" (change)="onRecruiterChange($event)" class="form-control">
-          <option class="dropdown-item" disabled selected value="undefined">All</option>
+          <option class="dropdown-item" disabled selected value="undefined">Select Technology</option>
           <option *ngFor="let item of technologylist" [value]="item.Technology_Name">{{item.Technology_Name}}</option>
         </select>
       </div>
@@ -43,7 +43,7 @@
       <div class="form-group col-md-4">
         <label for="inputRole">Visa Status</label>
         <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)" class="form-control">
-          <option class="dropdown-item"  disabled selected value="undefined">All</option>
+          <option class="dropdown-item"  disabled selected value="undefined">Select Visa Type</option>
           <option *ngFor="let item of visatypelist" [value]="item.Visa_Name">{{item.Visa_Name}}</option>
         </select>
       </div>

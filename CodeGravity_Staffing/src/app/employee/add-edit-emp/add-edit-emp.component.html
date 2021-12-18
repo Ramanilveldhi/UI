@@ -3,33 +3,39 @@
 
 <form  (ngsubmit)= "submitData()" style="border: 0pt solid black; ">
     <div class="form-row">
-      <div class="form-group col-md-12">
+      <div class="form-group col-md-4">
         <label for="inputName">First Name</label>
         <input type="text" class="form-control" id="inputName" placeholder="First Name & Middle Name" name="emp_Name" 
         [(ngModel)]=" addEmployee.emp_Name">
       </div>
-      <div class="form-group col-md-12">
+      <div class="form-group col-md-4">
         <label for="inputName">Last Name</label>
         <input type="text" class="form-control" id="inputName" placeholder="Last Name" name="emp_Name" 
         [(ngModel)]=" addEmployee.emp_Name">
       </div>
-      <div class="form-group col-md-12">
+      <div class="form-group col-md-4">
         <label for="inputEmail">Email</label>
         <input type="email" class="form-control" id="inputEmail" placeholder="email@codegravityit.com" name="emp_Email" 
         [(ngModel)]=" addEmployee.emp_Email">
       </div>
     </div>
     <div class="form-row">
-      <div class="form-group col-md-12">
-        <label for="inputPhneNumber">Phone Number</label>
-        <input type="email" class="form-control" id="inputPhneNumber" placeholder="Phone Number" name="emp_Phone" 
-        [(ngModel)]=" addEmployee.emp_Phone"> 
-      </div>
+      
      
     </div>
 
     <div class="form-row">
-      <div class="form-group col-md-12">
+      <div class="form-group col-md-4">
+        <label for="inputPhneNumber">Phone Number</label>
+        <input type="email" class="form-control" id="inputPhneNumber" placeholder="Phone Number" name="emp_Phone" 
+        [(ngModel)]=" addEmployee.emp_Phone"> 
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputPhneNumber">Phone Number</label>
+        <input type="email" class="form-control" id="inputPhneNumber" placeholder="Phone Number" name="emp_Phone" 
+        [(ngModel)]=" addEmployee.emp_Phone"> 
+      </div>
+      <div class="form-group col-md-4">
         <label for="inputCountry">Country</label>
         <select id="inputCountry" class="form-control">
           <option selected>Choose...</option>
@@ -38,7 +44,7 @@
           <option>Canada</option>
         </select>
       </div>
-      <div class="form-group col-md-12">
+      <div class="form-group col-md-4">
         <label for="inputRole">Role</label>
         <select id="inputRole" class="form-control">
           <option selected>Choose...</option>          
@@ -48,7 +54,7 @@
          
         </select>
       </div>
-      <div class="form-group col-md-12">
+      <div class="form-group col-md-4">
         <label for="inputIncentive">Incentive Category</label>
         <select id="inputIncentive" class="form-control">
           <option selected>Choose...</option>          

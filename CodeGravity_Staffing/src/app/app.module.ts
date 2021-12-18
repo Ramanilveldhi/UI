@@ -22,6 +22,12 @@ import { AddEditPlacementComponent } from './placement/add-edit-placement/add-ed
 import { TechnologiesComponent } from './technologies/technologies.component';
 import { ShowtechnologyComponent } from './technologies/showtechnology/showtechnology.component';
 import { AddEditTechnologyComponent } from './technologies/add-edit-technology/add-edit-technology.component';
+import { EntitlementsComponent } from './entitlements/entitlements.component';
+import { ShowentitlementComponent } from './entitlements/showentitlement/showentitlement.component';
+import { AddEditEntitlementComponent } from './entitlements/add-edit-entitlement/add-edit-entitlement.component';
+import { SubmissionsComponent } from './submissions/submissions.component';
+import { ShowsubmissionsComponent } from './submissions/showsubmissions/showsubmissions.component';
+import { AddEditSubmissionComponent } from './submissions/add-edit-submission/add-edit-submission.component';
 
 
 
@@ -43,7 +49,13 @@ import { AddEditTechnologyComponent } from './technologies/add-edit-technology/a
     AddEditPlacementComponent,
     TechnologiesComponent,
     ShowtechnologyComponent,
-    AddEditTechnologyComponent
+    AddEditTechnologyComponent,
+    EntitlementsComponent,
+    ShowentitlementComponent,
+    AddEditEntitlementComponent,
+    SubmissionsComponent,
+    ShowsubmissionsComponent,
+    AddEditSubmissionComponent
    
   ],
   imports: [
