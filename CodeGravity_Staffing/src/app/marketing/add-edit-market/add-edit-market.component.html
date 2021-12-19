@@ -2,26 +2,27 @@
   <h4 style="color:rgb(253, 254, 255);background: rgb(112, 101, 134);" class="form-group col-md-12">New Marketing
     Assignment</h4>
 
-  <form (ngsubmit)="submitData()" style="border: 0pt solid black; ">
+  <form  style="border: 0pt solid black; ">
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="inputRole">Consultant Name</label>
-        <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)" class="form-control">
+        <select [(ngModel)]="selectedConsultantValue" (change)="onConsultantChange($event)" class="form-control">
           <option class="dropdown-item" disabled selected value="undefined">Select Consultant</option>
-          <option *ngFor="let item of consultantlist" [value]="item.Consult_Full_Name">{{item.Consult_Full_Name}}</option>
+          <option *ngFor="let item of consultantlist" [value]="item.Consult_Id">{{item.Consult_Full_Name}}
+          </option>
         </select>
 
       </div>
       <div class="form-group col-md-4">
         <label for="inputRole">Recruiter to Assign</label>
-        <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)" class="form-control">
+        <select [(ngModel)]="selectedRecruiterValue" (change)="onRecruiterChange($event)" class="form-control">
           <option class="dropdown-item" disabled selected value="undefined">Select Recruiter</option>
-          <option *ngFor="let item of employeelist" [value]="item.Emp_Name">{{item.Emp_Name}}</option>
+          <option *ngFor="let item of employeelist" [value]="item.Emp_Id">{{item.Emp_FullName}}</option>
         </select>
       </div>
       <div class="form-group col-md-4">
         <label for="inputRole">Technology</label>
-        <select [(ngModel)]=" selectedValue" (change)="onRecruiterChange($event)" class="form-control">
+        <select [(ngModel)]=" selectedTechValue" (change)="onTechChange($event)" class="form-control">
           <option class="dropdown-item" disabled selected value="undefined">Select Technology</option>
           <option *ngFor="let item of technologylist" [value]="item.Technology_Name">{{item.Technology_Name}}</option>
         </select>
@@ -33,70 +34,32 @@
       <div class="form-group col-md-4">
         <label for="inputPhneNumber">Marketing Type</label>
         <input type="email" class="form-control" id="inputmarketingtype" placeholder="Open to all/Dedicate"
-          name="market_Isopentoall">
+          name="market_Isopentoall" [(ngModel)]="objMarketAssignement.Is_Open_To_All">
       </div>
       <div class="form-group col-md-4">
         <label for="inputPhneNumber">Marketing Start Date</label>
-        <input type="email" class="form-control" id="inputPstartdate" placeholder="MM/DD/YYYY" name="market_startdate">
+        <input type="email" class="form-control" id="inputPstartdate" placeholder="MM/DD/YYYY" 
+        name="market_startdate" [(ngModel)]="objMarketAssignement.Marketing_Start_Date">
 
       </div>
       <div class="form-group col-md-4">
-        <label for="inputRole">Visa Type</label>
-        <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)" class="form-control">
-          <option class="dropdown-item"  disabled selected value="undefined">Select Visa Type</option>
-          <option *ngFor="let item of visatypelist" [value]="item.Visa_Name">{{item.Visa_Name}}</option>
-        </select>
+        <label for="inputPhneNumber">Marketing Target End Date</label>
+        <input type="email" class="form-control" id="inputendtdate" placeholder="MM/DD/YYYY" 
+        name="market_enddate" [(ngModel)]="objMarketAssignement.Marketing_End_Date">
+
       </div>
 
     </div>
-    <!-- <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Client Name</label>
-              <input type="email" class="form-control" id="inputclientname" placeholder="" name="market_clientname"> 
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Rate Confirmation</label>
-              <input type="email" class="form-control" id="inputrateconfirm" placeholder="" name="market_rateconfirmation"> 
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Bill Rate</label>
-              <input type="email" class="form-control" id="inputbillrate" placeholder="" name="market_billrate"> 
-            </div>
-           
-        </div> -->
-    <!-- <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Assignment Date</label>
-              <input type="text" class="form-control" id="inputassignmentdate" placeholder="MM/DD/YYYY" name="market_assignmentdate"> 
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Assignment Status</label>
-              <input type="text" class="form-control" id="inputAssignmentsatus" placeholder="" name="market_assignmentstatus"> 
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Interview Date</label>
-              <input type="text" class="form-control" id="inputinterviewdate" placeholder="MM/DD/YYYY" name="market_interviewdate"> 
-            </div>
-           
-          </div> -->
-    <!-- <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Visa Status</label>
-              <input type="text" class="form-control" id="inputvisastatus" placeholder="" name="market_visastatus"> 
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Marketing Status</label>
-              <input type="text" class="form-control" id="inputmarketingstatus" placeholder="" name="market_marketingStatus"> 
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Marketing End Date</label>
-              <input type="text" class="form-control" id="inputenddate" placeholder="MM/DD/YYYY" name="market_interviewdate"> 
-            </div>
-           
-          </div> -->
 
     <div class="form-row">
-      <div class="form-group col-md-12">
+      <div class="form-group col-md-4">
+        <label for="inputRole">Visa Type</label>
+        <select [(ngModel)]="selectedVisaValue" (change)="onVisaTypeChange($event)" class="form-control">
+          <option class="dropdown-item" disabled selected value="undefined">Select Visa Type</option>
+          <option *ngFor="let item of visatypelist" [value]="item.Visa_Name">{{item.Visa_Name}}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
         <label for="inputPhneNumber">Notes</label>
         <input type="text" class="form-control" id="inputnotes" placeholder="comments" name="market_visastatus">
       </div>
@@ -104,7 +67,7 @@
 
     <div class="form-group">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <input class="form-check-input" type="checkbox" id="gridCheck" [(ngModel)]="isChecked">
         <label class="form-check-label" for="gridCheck">
           Active
         </label>
@@ -114,7 +77,8 @@
   </form>
   <div></div>
 
-  <button type="submit" class="btn btn-primary">
-    <a [routerLink]="['/market']" routerLinkActive="active" class="nav-link" class="text-light">Save</a>
-  </button>
+  <button type="submit" (click)="submitData(objMarketAssignement)" class="btn btn-primary" >Save
+    <!-- <a [routerLink]="['/employee']" routerLinkActive="active"  class="nav-link" class="text-light">Save</a>   -->
+    </button>
+  
 </div>

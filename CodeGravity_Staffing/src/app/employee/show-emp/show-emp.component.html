@@ -44,10 +44,10 @@
   <tbody>
     <tr  class="bb" style="  border: 1pt solid black;" *ngFor="let dataitem of consultantlist">
           <td>{{dataitem.Emp_Id}}</td>
-          <td>{{dataitem.Emp_Name}}</td>
+          <td>{{dataitem.Emp_FirstName + '&nbsp;'+dataitem.Emp_LastName}}</td>
           <td>{{dataitem.Emp_Email}}</td>
           <td>{{dataitem.Emp_Phone}}</td>
-          <td>{{dataitem.Emp_work_Region}}</td>
+          <td>{{dataitem.Emp_Country}}</td>
           
           <td>
               <button type="button" class="btn btn-light mr-1">

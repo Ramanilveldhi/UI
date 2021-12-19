@@ -12,7 +12,7 @@ export class AddEditEmpComponent implements OnInit {
  addEmployee = new addEmployee();
   constructor(private service: SharedService,
     private router: Router) { }
-  @Input() emp: any;
+  
 
   countrylist: any = [];
   entitlementlist: any = [];
@@ -21,6 +21,7 @@ export class AddEditEmpComponent implements OnInit {
   selectedCountryIdValue:any;
   selectedRoleValue:any;
   selectedIncentiveValue:any;
+  message:boolean=false;
   ngOnInit(): void {
     this.getCountryList();
     this.getEntitlementList();
@@ -32,7 +33,10 @@ export class AddEditEmpComponent implements OnInit {
     addEmp.role_Id = +(this.selectedRoleValue);
     addEmp.emp_Status = this.isChecked ? 1 : 0;
     this.service.addemployee(addEmp).subscribe(res => {
+      alert('Employee Added Successfully .....');
       this.router.navigate(['/employee']);
+      
+      
     })
   }
   getCountryList() {
@@ -53,6 +57,10 @@ export class AddEditEmpComponent implements OnInit {
   onCountryChange(item: any) {
     // const value = item.target.value;
     
+
+  }
+  closepopup(){
+    this.router.navigate(['/employee']);
 
   }
 

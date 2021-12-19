@@ -7,4 +7,5 @@ export class addEmployee{
         emp_IncentiveType:any;
         emp_Status:any;
         role_Id:any;
+        emp_FUllName:any;
 }
