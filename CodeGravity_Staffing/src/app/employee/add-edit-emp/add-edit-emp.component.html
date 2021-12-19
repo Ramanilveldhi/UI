@@ -35,27 +35,21 @@
         <label for="inputCountry">Country</label>
         <select [(ngModel)]="selectedValue" (change)="onCountryChange($event)" class="form-control">
           <option class="dropdown-item" disabled selected value="undefined">Select </option>
-          <option *ngFor="let item of countrylist" [value]="item.Emp_Name">{{item.CountyName}}</option>
+          <option *ngFor="let item of countrylist" [value]="item.CountyName">{{item.CountyName}}</option>
         </select>
       </div>
       <div class="form-group col-md-4">
         <label for="inputRole">Role</label>
-        <select id="inputRole" class="form-control">
-          <option selected>Choose...</option>          
-          <option>Admin</option>
-          <option>Manager</option>
-          <option>Employee</option>
-         
+        <select [(ngModel)]="selectedValue" (change)="onCountryChange($event)" class="form-control">
+          <option class="dropdown-item" disabled selected value="undefined">Select </option>
+          <option *ngFor="let item of entitlementlist" [value]="item.Entit_Name">{{item.Entit_Name}}</option>
         </select>
       </div>
       <div class="form-group col-md-4">
         <label for="inputIncentive">Incentive Category</label>
-        <select id="inputIncentive" class="form-control">
-          <option selected>Choose...</option>          
-          <option>INR</option>
-          <option>USD</option>
-          <option>CAD</option>
-          
+       <select [(ngModel)]="selectedValue" (change)="onCountryChange($event)" class="form-control">
+          <option class="dropdown-item" disabled selected value="undefined">Select </option>
+          <option *ngFor="let item of incentivetypelist" [value]="item.Incentive_Currency">{{item.Incentive_Currency}}</option>
         </select>
       </div>
     </div>

@@ -35,7 +35,9 @@ export class AddEditMarketComponent implements OnInit {
     //   this.tempMarketinglist = this.tempMarketinglist.filter((marketinglistobj: any) => marketinglistobj.Assigned_Sales_Recruiter === value);
     // }
 
+    
   }
+  onVisaTypeChange(){}
 
   getEmployeeList(){
     this.service.getemployeelist().subscribe((val: any)=>{

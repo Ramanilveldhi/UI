@@ -3,89 +3,119 @@
     
     <form  (ngsubmit)= "submitData()" style="border: 0pt solid black; ">
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-3">
+            <label for="inputRole">Recruiter Name</label>
+            <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)" class="form-control">
+              <option class="dropdown-item" disabled selected value="undefined">Select Recruiter</option>
+              <option *ngFor="let item of employeelist" [value]="item.Emp_Name">{{item.Emp_Name}}</option>
+            </select> </div>
+          <div class="form-group col-md-3">
             <label for="inputName">Consulatant Name</label>
-            <input type="text" class="form-control" id="inputName" placeholder="First name & Last Name" name="placemnt_ConsulatantName" >
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputEmail">Recruiter Name</label>
-            <input type="text" class="form-control" id="inputRecruiterName" placeholder="First name & Last Name" name="placemnt_RecruiterName">
-          </div>
-          <div class="form-group col-md-4">
+            <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)" class="form-control">
+              <option class="dropdown-item" disabled selected value="undefined">Select Consultant</option>
+              <option *ngFor="let item of consultantlist" [value]="item.Consult_Full_Name">{{item.Consult_Full_Name}}</option>
+            </select>  
+          </div>          
+          <div class="form-group col-md-3">
             <label for="inputPhneNumber">Technology</label>
-            <input type="email" class="form-control" id="inputtechnology" placeholder="Java Devops,Salesforce,Qa automation" name="placemnt_Technology"> 
+            <select [(ngModel)]=" selectedValue" (change)="onRecruiterChange($event)" class="form-control">
+              <option class="dropdown-item" disabled selected value="undefined">Select Technology</option>
+              <option *ngFor="let item of technologylist" [value]="item.Technology_Name">{{item.Technology_Name}}</option>
+            </select>
           </div>
-          
-        </div>        
-        
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label for="inputPhneNumber">Purcha Order Date</label>
+          <div class="form-group col-md-3">
+            <label for="inputPhneNumber">Purchase Order Date</label>
             <input type="email" class="form-control" id="inputpodate" placeholder="MM/DD/YYYY" name="placemnt_podate"> 
           </div>
-          <div class="form-group col-md-4">
+        </div>    
+            
+        
+        <div class="form-row">
+          
+          <div class="form-group col-md-3">
+            <label for="inputRole">Visa Type</label>
+        <select [(ngModel)]="selectedValue" (change)="onVisaTypeChange($event)" class="form-control">
+          <option class="dropdown-item"  disabled selected value="undefined">Select Visa Type</option>
+          <option *ngFor="let item of visatypelist" [value]="item.Visa_Name">{{item.Visa_Name}}</option>
+        </select> </div>
+          <div class="form-group col-md-3">
             <label for="inputPhneNumber">Project Start Date</label>
             <input type="email" class="form-control" id="inputProjstartdate" placeholder="MM/DD/YYYY" name="placemnt_projstartdate"> 
             
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-3">
             <label for="inputPhneNumber">Project Duration</label>
-            <input type="email" class="form-control" id="inputprojectdur" placeholder="1 year/6 months" name="placemnt_projduration"> 
+            <input type="email" class="form-control" id="inputprojectdur" placeholder="specify in  months only" name="placemnt_projduration"> 
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputPhneNumber">Project End Date</label>
+            <input type="text" class="form-control" id="inputenddate" placeholder="MM/DD/YYYY (tentative date)" name="placemnt_projenddate"> 
           </div>
          
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Bill Rate</label>
-              <input type="email" class="form-control" id="inputbillrate" placeholder="" name="placemnt_billrate"> 
+        
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="inputPhneNumber">Vendor Name </label>
+              <input type="email" class="form-control" id="inputvendorname" placeholder="" name="placemnt_vendorname"> 
             </div>
-
-            <div class="form-group col-md-4">
-                <label for="inputPhneNumber">Consultant pay Rate</label>
-                <input type="email" class="form-control" id="inputconspayrate" placeholder="" name="placemnt_conspayrate"> 
-              </div>
-              <div class="form-group col-md-4">
-                <label for="inputPhneNumber">Vendor Name </label>
-                <input type="email" class="form-control" id="inputvendorname" placeholder="" name="placemnt_vendorname"> 
-              </div>
+            <div class="form-group col-md-3">
+              <label for="inputPhneNumber">Vendor SPOC's Email</label>
+              <input type="text" class="form-control" id="inputvendoraddress" placeholder="example@exmple.com" name="placemnt_vendoraddress"> 
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputPhneNumber">Vendor  SPOC's Phone Number</label>
+              <input type="text" class="form-control" id="inputvendorphone" placeholder="" name="placemnt_clientname"> 
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputPhneNumber">Vendor Address</label>
+              <input type="text" class="form-control" id="inputvendoraddress" placeholder="" name="placemnt_clientname"> 
+            </div>
+            
            
           </div>
           <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Vendor Address</label>
-              <input type="text" class="form-control" id="inputvendoraddress" placeholder="" name="placemnt_vendoraddress"> 
-            </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
               <label for="inputPhneNumber">Client Name</label>
-              <input type="text" class="form-control" id="inputclientname" placeholder="" name="placemnt_clientname"> 
+              <input type="text" class="form-control" id="inputclientname" placeholder="" name="placemnt_clientaddress"> 
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
+              <label for="inputPhneNumber">Client SPOC's Email</label>
+              <input type="text" class="form-control" id="inputclientaddress" placeholder="example@exmple.com" name="placemnt_clientaddress"> 
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputPhneNumber">Client SPOC's Phone Number</label>
+              <input type="text" class="form-control" id="inputclientphonenumber" placeholder="" name="placemnt_clientaddress"> 
+            </div>
+            <div class="form-group col-md-3">
               <label for="inputPhneNumber">Client Address</label>
               <input type="text" class="form-control" id="inputclientaddress" placeholder="" name="placemnt_clientaddress"> 
             </div>
-           
+            
           </div>
           <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Visa Type</label>
-              <input type="text" class="form-control" id="inputvisatype" placeholder="" name="placemnt_visastatus"> 
+            <div class="form-group col-md-3">
+              <label for="inputPhneNumber">Project Type</label>
+              <input type="text" class="form-control" id="inputprojectstatus" placeholder="Support/Development" name="placemnt_projectstatus"> 
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Project Status</label>
-              <input type="text" class="form-control" id="inputprojectstatus" placeholder="" name="placemnt_projectstatus"> 
+              <div class="form-group col-md-3">
+                <label for="inputPhneNumber">Bill Rate</label>
+                <input type="email" class="form-control" id="inputbillrate" placeholder="USD/Hour" name="placemnt_billrate"> 
+              </div>
+  
+              <div class="form-group col-md-3">
+                  <label for="inputPhneNumber">Consultant pay Rate</label>
+                  <input type="email" class="form-control" id="inputconspayrate" placeholder="USD/Hour" name="placemnt_conspayrate"> 
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputPhneNumber">Notes</label>
+                  <input type="text" class="form-control" id="inputnotes" placeholder="comments" name="market_visastatus"> 
+                </div>
+             
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputPhneNumber">Project End Date</label>
-              <input type="text" class="form-control" id="inputenddate" placeholder="MM/DD/YYYY" name="placemnt_projenddate"> 
-            </div>
-           
-          </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12">
-              <label for="inputPhneNumber">Notes</label>
-              <input type="text" class="form-control" id="inputnotes" placeholder="comments" name="market_visastatus"> 
-            </div>
+            
           </div>
     
         <div class="form-group">

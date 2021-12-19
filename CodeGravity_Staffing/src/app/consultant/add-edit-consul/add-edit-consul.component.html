@@ -28,26 +28,20 @@
           </div>
           <div class="form-group col-md-4">
             <label for="inputRole">Technology</label>
-            <select id="inputrecruitername" class="form-control">
-              <option selected>Choose...</option>          
-              <option>Java</option>
-              <option>Saleforce</option>
-              <option>Mulesoft</option>             
+            <select [(ngModel)]=" selectedValue" (change)="onRecruiterChange($event)" class="form-control">
+              <option class="dropdown-item" disabled selected value="undefined">Select Technology</option>
+              <option *ngFor="let item of technologylist" [value]="item.Technology_Name">{{item.Technology_Name}}</option>
             </select>
           </div>
          
         </div>
         
         <div class="form-row">
-          <div class="form-group col-md-12">
+          <div class="form-group col-md-4">
             <label for="inputRole">Visa Type</label>
-            <select id="inputrecruitername" class="form-control">
-              <option selected>Choose...</option>          
-              <option>OPT</option>
-              <option>CPT</option>
-              <option>H1B</option>     
-              <option>GC</option>
-              <option>H4 EAD</option>          
+            <select [(ngModel)]="selectedValue" (change)="onVisaTypeChange($event)" class="form-control">
+              <option class="dropdown-item"  disabled selected value="undefined">Select Visa Type</option>
+              <option *ngFor="let item of visatypelist" [value]="item.Visa_Name">{{item.Visa_Name}}</option>
             </select>
           </div>
          
