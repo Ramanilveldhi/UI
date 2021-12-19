@@ -1,22 +1,22 @@
 <div >
 <h4 style="color:rgb(253, 254, 255);background: rgb(112, 101, 134);" class="form-group col-md-12">Add Employee Details </h4>
 
-<form  (ngsubmit)= "submitData()" style="border: 0pt solid black; ">
+<div  style="border: 0pt solid black; ">
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="inputName">First Name</label>
-        <input type="text" class="form-control" id="inputName" placeholder="First Name" name="emp_Name" 
-        [(ngModel)]=" addEmployee.emp_Name">
+        <input  type="text" class="form-control" id="inputName" placeholder="First Name" name="emp_FirstName" 
+        [(ngModel)]="addEmployee.emp_FirstName">
       </div>
       <div class="form-group col-md-4">
         <label for="inputName">Last Name</label>
-        <input type="text" class="form-control" id="inputName" placeholder="Last Name" name="emp_Name" 
-        [(ngModel)]=" addEmployee.emp_Name">
+        <input type="text"  class="form-control" id="inputName" placeholder="Last Name" name="emp_LastName" 
+        [(ngModel)]="addEmployee.emp_LastName">
       </div>
       <div class="form-group col-md-4">
         <label for="inputEmail">Email</label>
-        <input type="email" class="form-control" id="inputEmail" placeholder="email@codegravityit.com" name="emp_Email" 
-        [(ngModel)]=" addEmployee.emp_Email">
+        <input type="email"  class="form-control" id="inputEmail" placeholder="email@codegravityit.com" name="emp_Email" 
+        [(ngModel)]="addEmployee.emp_Email">
       </div>
     </div>
     <div class="form-row">
@@ -29,43 +29,49 @@
       <div class="form-group col-md-4">
         <label for="inputPhneNumber">Phone Number</label>
         <input type="email" class="form-control" id="inputPhneNumber" placeholder="Phone Number" name="emp_Phone" 
-        [(ngModel)]=" addEmployee.emp_Phone"> 
+        [(ngModel)]="addEmployee.emp_Phone"> 
       </div>
       <div class="form-group col-md-4">
         <label for="inputCountry">Country</label>
-        <select [(ngModel)]="selectedValue" (change)="onCountryChange($event)" class="form-control">
+        <select [(ngModel)]="selectedCountryIdValue" (change)="onCountryChange($event)" class="form-control">
           <option class="dropdown-item" disabled selected value="undefined">Select </option>
-          <option *ngFor="let item of countrylist" [value]="item.CountyName">{{item.CountyName}}</option>
+          <option *ngFor="let item of countrylist" [value]="item.CountryId">{{item.CountyName}}</option>
         </select>
       </div>
-      <div class="form-group col-md-4">
+       <div class="form-group col-md-4">
         <label for="inputRole">Role</label>
-        <select [(ngModel)]="selectedValue" (change)="onCountryChange($event)" class="form-control">
-          <option class="dropdown-item" disabled selected value="undefined">Select </option>
-          <option *ngFor="let item of entitlementlist" [value]="item.Entit_Name">{{item.Entit_Name}}</option>
+        <select [(ngModel)]="selectedRoleValue" id="inputRole" class="form-control">
+          <option selected>Choose...</option>          
+          <option [value]="1">Admin</option>
+          <option [value]="2">Manager</option>
+          <option [value]="3">Employee</option>
+         
         </select>
-      </div>
+      </div> 
       <div class="form-group col-md-4">
         <label for="inputIncentive">Incentive Category</label>
-       <select [(ngModel)]="selectedValue" (change)="onCountryChange($event)" class="form-control">
-          <option class="dropdown-item" disabled selected value="undefined">Select </option>
-          <option *ngFor="let item of incentivetypelist" [value]="item.Incentive_Currency">{{item.Incentive_Currency}}</option>
+        <select [(ngModel)]="selectedIncentiveValue" id="inputIncentive" class="form-control">
+          <option selected>Choose...</option>          
+          <option [value]="1">INR</option>
+          <option [value]="2">USD</option>
+          <option [value]="3">CAD</option>
+          
         </select>
       </div>
     </div>
     <div class="form-group">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <input class="form-check-input" type="checkbox" id="gridCheck" [(ngModel)]="isChecked">
         <label class="form-check-label" for="gridCheck">
           Active
         </label>
       </div>
     </div>
    
-  </form>
+</div>
   <div></div>
   
-  <button type="submit" class="btn btn-primary">
-    <a [routerLink]="['/employee']" routerLinkActive="active"  class="nav-link" class="text-light">Save</a>  
+  <button type="submit" (click)="submitData(addEmployee)" class="btn btn-primary" value="Save">Save
+    <!-- <a [routerLink]="['/employee']" routerLinkActive="active"  class="nav-link" class="text-light">Save</a>   -->
     </button>
 </div>
