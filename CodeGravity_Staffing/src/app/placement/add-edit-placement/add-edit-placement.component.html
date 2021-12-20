@@ -1,31 +1,32 @@
 <div >
     <h4 style="color:rgb(253, 254, 255);background: rgb(112, 101, 134);" class="form-group col-md-12">Add Placement details </h4>
     
-    <form  (ngsubmit)= "submitData()" style="border: 0pt solid black; ">
+    <div style="border: 0pt solid black; ">
         <div class="form-row">
           <div class="form-group col-md-3">
             <label for="inputRole">Recruiter Name</label>
-            <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)" class="form-control">
+            <select [(ngModel)]="selectedEmpIdvalue" (change)="onRecruiterChange($event)" class="form-control">
               <option class="dropdown-item" disabled selected value="undefined">Select Recruiter</option>
-              <option *ngFor="let item of employeelist" [value]="item.Emp_Name">{{item.Emp_Name}}</option>
+              <option *ngFor="let item of employeelist" [value]="item.Emp_Id">{{item.Emp_FullName}}</option>
             </select> </div>
           <div class="form-group col-md-3">
             <label for="inputName">Consulatant Name</label>
-            <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)" class="form-control">
+            <select [(ngModel)]="selectedConsultIdValue" (change)="onRecruiterChange($event)" class="form-control">
               <option class="dropdown-item" disabled selected value="undefined">Select Consultant</option>
               <option *ngFor="let item of consultantlist" [value]="item.Consult_Full_Name">{{item.Consult_Full_Name}}</option>
             </select>  
           </div>          
           <div class="form-group col-md-3">
             <label for="inputPhneNumber">Technology</label>
-            <select [(ngModel)]=" selectedValue" (change)="onRecruiterChange($event)" class="form-control">
+            <select [(ngModel)]=" selectedtechIdValue" (change)="onRecruiterChange($event)" class="form-control">
               <option class="dropdown-item" disabled selected value="undefined">Select Technology</option>
               <option *ngFor="let item of technologylist" [value]="item.Technology_Name">{{item.Technology_Name}}</option>
             </select>
           </div>
           <div class="form-group col-md-3">
-            <label for="inputPhneNumber">Purchase Order Date</label>
-            <input type="email" class="form-control" id="inputpodate" placeholder="MM/DD/YYYY" name="placemnt_podate"> 
+            <label for="inputPODate">Purchase Order Date</label>
+            <input type="email" class="form-control" id="inputpodate" placeholder="MM/DD/YYYY" 
+            name="placemnt_podate" [(ngModel)]="objPlacement.PODate"> 
           </div>
         </div>    
             
@@ -34,22 +35,25 @@
           
           <div class="form-group col-md-3">
             <label for="inputRole">Visa Type</label>
-        <select [(ngModel)]="selectedValue" (change)="onVisaTypeChange($event)" class="form-control">
+        <select [(ngModel)]="selectedVisaValue" (change)="onVisaTypeChange($event)" class="form-control">
           <option class="dropdown-item"  disabled selected value="undefined">Select Visa Type</option>
           <option *ngFor="let item of visatypelist" [value]="item.Visa_Name">{{item.Visa_Name}}</option>
         </select> </div>
           <div class="form-group col-md-3">
-            <label for="inputPhneNumber">Project Start Date</label>
-            <input type="email" class="form-control" id="inputProjstartdate" placeholder="MM/DD/YYYY" name="placemnt_projstartdate"> 
+            <label for="inputprojectStartdate">Project Start Date</label>
+            <input type="email" class="form-control" id="inputProjstartdate" placeholder="MM/DD/YYYY" 
+            name="placemnt_projstartdate" [(ngModel)]="objPlacement.ProjStartdate"> 
             
           </div>
           <div class="form-group col-md-3">
-            <label for="inputPhneNumber">Project Duration</label>
-            <input type="email" class="form-control" id="inputprojectdur" placeholder="specify in  months only" name="placemnt_projduration"> 
+            <label for="inputProjduration">Project Duration</label>
+            <input type="email" class="form-control" id="inputprojectdur" placeholder="specify in  months only"
+             name="placemnt_projduration" [(ngModel)]="objPlacement.Projectduration"> 
           </div>
           <div class="form-group col-md-3">
             <label for="inputPhneNumber">Project End Date</label>
-            <input type="text" class="form-control" id="inputenddate" placeholder="MM/DD/YYYY (tentative date)" name="placemnt_projenddate"> 
+            <input type="text" class="form-control" id="inputenddate" placeholder="MM/DD/YYYY (tentative date)"
+             name="placemnt_projenddate" [(ngModel)]="objPlacement.ProjEnddate"> 
           </div>
          
         </div>
@@ -57,80 +61,91 @@
           <div class="form-row">
             <div class="form-group col-md-3">
               <label for="inputPhneNumber">Vendor Name </label>
-              <input type="email" class="form-control" id="inputvendorname" placeholder="" name="placemnt_vendorname"> 
+              <input type="email" class="form-control" id="inputvendorname" placeholder="" 
+              name="placemnt_vendorname"[(ngModel)]="objPlacement.Vendorname"> 
             </div>
             <div class="form-group col-md-3">
               <label for="inputPhneNumber">Vendor SPOC's Email</label>
-              <input type="text" class="form-control" id="inputvendoraddress" placeholder="example@exmple.com" name="placemnt_vendoraddress"> 
+              <input type="text" class="form-control" id="inputvendoraddress" placeholder="example@exmple.com" 
+              name="placemnt_vendoraddress" [(ngModel)]="objPlacement.Vendoremail"> 
             </div>
             <div class="form-group col-md-3">
               <label for="inputPhneNumber">Vendor  SPOC's Phone Number</label>
-              <input type="text" class="form-control" id="inputvendorphone" placeholder="" name="placemnt_clientname"> 
+              <input type="text" class="form-control" id="inputvendorphone" placeholder="" 
+              name="placemnt_clientname"[(ngModel)]="objPlacement.Vendorphone"> 
             </div>
             <div class="form-group col-md-3">
               <label for="inputPhneNumber">Vendor Address</label>
-              <input type="text" class="form-control" id="inputvendoraddress" placeholder="" name="placemnt_clientname"> 
+              <input type="text" class="form-control" id="inputvendoraddress" placeholder="" 
+              name="placemnt_clientname" [(ngModel)]="objPlacement.vendoraddress"> 
             </div>
             
            
           </div>
           <div class="form-row">
             <div class="form-group col-md-3">
-              <label for="inputPhneNumber">Client Name</label>
-              <input type="text" class="form-control" id="inputclientname" placeholder="" name="placemnt_clientaddress"> 
+              <label for="inputclientname">Client Name</label>
+              <input type="text" class="form-control" id="inputclientname" placeholder="" name="placemnt_clientaddress"
+              [(ngModel)]="objPlacement.ClientName"> 
             </div>
             <div class="form-group col-md-3">
               <label for="inputPhneNumber">Client SPOC's Email</label>
-              <input type="text" class="form-control" id="inputclientaddress" placeholder="example@exmple.com" name="placemnt_clientaddress"> 
+              <input type="text" class="form-control" id="inputclientaddress" placeholder="example@exmple.com" 
+              name="placemnt_clientaddress" [(ngModel)]="objPlacement.clientemail"> 
             </div>
             <div class="form-group col-md-3">
               <label for="inputPhneNumber">Client SPOC's Phone Number</label>
-              <input type="text" class="form-control" id="inputclientphonenumber" placeholder="" name="placemnt_clientaddress"> 
+              <input type="text" class="form-control" id="inputclientphonenumber" placeholder="" 
+              name="placemnt_clientaddress" [(ngModel)]="objPlacement.clientphone"> 
             </div>
             <div class="form-group col-md-3">
-              <label for="inputPhneNumber">Client Address</label>
-              <input type="text" class="form-control" id="inputclientaddress" placeholder="" name="placemnt_clientaddress"> 
+              <label for="inputclientaddress">Client Address</label>
+              <input type="text" class="form-control" id="inputclientaddress" placeholder="" 
+              name="placemnt_clientaddress" [(ngModel)]="objPlacement.clientaddress"> 
             </div>
             
           </div>
           <div class="form-row">
             <div class="form-group col-md-3">
-              <label for="inputPhneNumber">Project Type</label>
-              <input type="text" class="form-control" id="inputprojectstatus" placeholder="Support/Development" name="placemnt_projectstatus"> 
+              <label for="inputProjecttype">Project Type</label>
+              <input type="text" class="form-control" id="inputprojectstatus" placeholder="Support/Development"
+               name="placemnt_projectstatus" [(ngModel)]="objPlacement.Projecttype"> 
             </div>
               <div class="form-group col-md-3">
-                <label for="inputPhneNumber">Bill Rate</label>
-                <input type="email" class="form-control" id="inputbillrate" placeholder="USD/Hour" name="placemnt_billrate"> 
+                <label for="inputBillrate">Bill Rate</label>
+                <input type="email" class="form-control" id="inputbillrate" placeholder="USD/Hour" 
+                name="placemnt_billrate" [(ngModel)]="objPlacement.Billrate"> 
               </div>
   
               <div class="form-group col-md-3">
-                  <label for="inputPhneNumber">Consultant pay Rate</label>
-                  <input type="email" class="form-control" id="inputconspayrate" placeholder="USD/Hour" name="placemnt_conspayrate"> 
+                  <label for="inputconsultpayrate">Consultant pay Rate</label>
+                  <input type="email" class="form-control" id="inputconspayrate" placeholder="USD/Hour" 
+                  name="placemnt_conspayrate" [(ngModel)]="objPlacement.consultpayrate"> 
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="inputPhneNumber">Notes</label>
-                  <input type="text" class="form-control" id="inputnotes" placeholder="comments" name="market_visastatus"> 
+                  <label for="inputNotes">Notes</label>
+                  <input type="text" class="form-control" id="inputnotes" placeholder="comments" 
+                  name="market_visastatus" [(ngModel)]="objPlacement.Notes"> 
                 </div>
              
             </div>
 
-          <div class="form-row">
-            
-          </div>
+          
     
         <div class="form-group">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <input class="form-check-input" type="checkbox" id="gridCheck" [(ngModel)]="isChecked">
             <label class="form-check-label" for="gridCheck">
               Active
             </label>
           </div>
         </div>
        
-      </form>
+    </div>
       <div></div>
       
-      <button type="submit" class="btn btn-primary">
-        <a [routerLink]="['/placement']" routerLinkActive="active"  class="nav-link" class="text-light">Add Placement Details</a>  
+      
+      <button type="submit" (click)="submitData(objPlacement)" class="btn btn-primary" value="Save">Save
+        <!-- <a [routerLink]="['/placement']" routerLinkActive="active"  class="nav-link" class="text-light">Save</a>   -->
         </button>
     </div>

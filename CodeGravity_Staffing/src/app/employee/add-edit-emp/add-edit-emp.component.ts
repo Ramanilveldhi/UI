@@ -32,6 +32,7 @@ export class AddEditEmpComponent implements OnInit {
     addEmp.emp_IncentiveType = +(this.selectedIncentiveValue);
     addEmp.role_Id = +(this.selectedRoleValue);
     addEmp.emp_Status = this.isChecked ? 1 : 0;
+    addEmp.emp_IncentiveType=+(this.selectedIncentiveValue);
     this.service.addemployee(addEmp).subscribe(res => {
       alert('Employee Added Successfully .....');
       this.router.navigate(['/employee']);

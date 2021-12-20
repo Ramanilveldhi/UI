@@ -16,19 +16,22 @@ export class AddEditMarketComponent implements OnInit {
   employeelist: any = [];
   consultantlist: any = [];
   technologylist: any = [];
-  visatypelist: any = [];
+  VisaList: any = [];
 
   selectedConsultantValue: any;
   selectedRecruiterValue: any;
   isChecked: boolean = false;
   selectedTechValue: any;
-  selectedVisaValue: any;
+  selectedvisaidValue: any;
+  Is_Open_To_All:any;
+  notes:any;
+  selectedidValue:any;
 
   ngOnInit(): void {
 
     //Populate the Dropdown values
     this.getEmployeeList();
-    this.getConsultantList();
+    this.getConsultantList(-1);
     this.getTechnologyList();
     this.getVisatypeList();
 
@@ -40,7 +43,9 @@ export class AddEditMarketComponent implements OnInit {
     addmarket.Assigned_Sales_Recruiter = +(this.selectedRecruiterValue);
     addmarket.Marketing_Tech = +(this.selectedTechValue);
     addmarket.market_Status = this.isChecked ? 1 : 0;
-    addmarket.Visa_type = +(this.selectedVisaValue);
+    addmarket.Visa_Status = this.selectedvisaidValue;
+   // addmarket.Is_Open_To_All=+(this.Is_Open_To_All);
+    //addmarket.Notes=this.notes
     this.service.addmarketing(addmarket).subscribe(res => {
       alert('Market assignment  Added Successfully .....');
       this.router.navigate(['/market']);
@@ -59,14 +64,14 @@ export class AddEditMarketComponent implements OnInit {
   onRecruiterChange(item: any) {
 
   }
-  onVisaTypeChange(item: any) { }
+  //onVisaChange(item: any) { }
 
   getEmployeeList() {
     this.service.getemployeelist().subscribe((val: any) => {
       this.employeelist = val;
     });
   }
-  getConsultantList() {
+  getConsultantList(val: any) {
     this.service.getconsultlist().subscribe((val: any) => {
       this.consultantlist = val;
     });
@@ -78,8 +83,21 @@ export class AddEditMarketComponent implements OnInit {
   }
   getVisatypeList() {
     this.service.getVisatypelist().subscribe((val: any) => {
-      this.visatypelist = val;
+      this.VisaList = val;
     });
   }
+
+  onVisaTypeChange(visaitem:any){ 
+    
+    const value = visaitem.target.value;
+    this.selectedvisaidValue=value;
+  }
+  // onVisaChange(item: any) {
+  //   const value = item.target.value;
+  //   // this.tempMarketinglist = this.marketinglist;
+  //   // if (value != 'undefined') {
+  //   //   this.tempMarketinglist = this.tempMarketinglist.filter((marketinglistobj: any) => marketinglistobj.Assigned_Sales_Recruiter === value);
+  //   // }
+  // }
 
 }

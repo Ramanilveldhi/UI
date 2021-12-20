@@ -49,18 +49,20 @@
             <option [value]="1">Admin</option>
             <option [value]="2">Manager</option>
             <option [value]="3">Employee</option>
-           
+           incentivetypelist
           </select> -->
         </div> 
         <div class="form-group col-md-4">
           <label for="inputIncentive">Incentive Category</label>
           <select [(ngModel)]="selectedIncentiveValue" id="inputIncentive" class="form-control">
-            <option selected>Choose...</option>          
+            <!-- <option selected>Choose...</option>          
             <option [value]="1">INR</option>
             <option [value]="2">USD</option>
             <option [value]="3">CAD</option>
-            
-          </select>
+             -->
+             <option class="dropdown-item" disabled selected value="undefined">Select </option>
+             <option *ngFor="let item of incentivetypelist" [value]="item.Incentive_Id">{{item.Incentive_Currency}}</option>
+           </select>
         </div>
       </div>
       <div class="form-group">

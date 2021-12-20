@@ -73,4 +73,7 @@ export class SharedService {
   getincentivetypetlist(): Observable<any[]> {
     return this.http.get<any>(this.ApiUrl + "/IncentiveMaster")
   }
+  addPlacement(val: any) {
+    return this.http.post(this.ApiUrl + "/PlacementMaster", val);
+  }
 }
