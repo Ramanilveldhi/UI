@@ -22,7 +22,7 @@
       </div>
       <div class="form-group col-md-4">
         <label for="inputRole">Technology</label>
-        <select [(ngModel)]=" selectedTechValue" (change)="onTechChange($event)" class="form-control">
+        <select [(ngModel)]="selectedTechValue" (change)="onTechChange($event)" class="form-control">
           <option class="dropdown-item" disabled selected value="undefined">Select Technology</option>
           <option *ngFor="let item of technologylist" [value]="item.Id">{{item.Technology_Name}}</option>
         </select>
@@ -54,7 +54,7 @@
      <div class="form-row">
       <div class="form-group col-md-4">
         <label for="inputvisatype">Visa Type</label>
-        <select [(ngModel)]=" selectedidValue" (change)="onVisaTypeChange($event)"  class="form-control">
+        <select [(ngModel)]="selectedidValue" (change)="onVisaTypeChange($event)"  class="form-control">
           <option class="dropdown-item" disabled selected value="undefined">Select Visa</option>
           <option *ngFor="let item of VisaList" [value]="item.Id">{{item.Visa_Name}}</option>
         </select>
