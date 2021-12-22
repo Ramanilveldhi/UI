@@ -9,6 +9,10 @@ import { AddEditEmpComponent } from './employee/add-edit-emp/add-edit-emp.compon
 import { AddEditConsulComponent } from './consultant/add-edit-consul/add-edit-consul.component';
 import { AddEditMarketComponent } from './marketing/add-edit-market/add-edit-market.component';
 import { AddEditPlacementComponent } from './placement/add-edit-placement/add-edit-placement.component';
+import { SubmissionsComponent } from './submissions/submissions.component';
+import { AddEditSubmissionComponent } from './submissions/add-edit-submission/add-edit-submission.component';
+import { ShowsubmissionsComponent } from './submissions/showsubmissions/showsubmissions.component';
+import {SubmissiondetailsComponent} from './submissions/submissiondetails/submissiondetails.component';
 // import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 const routes: Routes = [
@@ -20,7 +24,11 @@ const routes: Routes = [
   {path:'addemployee',component:AddEditEmpComponent},
   {path:'addconsult',component:AddEditConsulComponent},
   {path:'addMarketing',component:AddEditMarketComponent},
-  {path:'addplacement',component:AddEditPlacementComponent}
+  {path:'addplacement',component:AddEditPlacementComponent},
+  {path:'submission',component:ShowsubmissionsComponent},
+  {path:'addsubmission',component:AddEditSubmissionComponent},
+  {path:'submissiondet',component:SubmissiondetailsComponent}
+
 
 ];
 

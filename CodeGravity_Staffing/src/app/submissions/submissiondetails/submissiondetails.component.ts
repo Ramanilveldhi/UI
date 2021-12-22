@@ -2,17 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
-  selector: 'app-showsubmissions',
-  templateUrl: './showsubmissions.component.html',
-  styleUrls: ['./showsubmissions.component.css']
+  selector: 'app-submissiondetails',
+  templateUrl: './submissiondetails.component.html',
+  styleUrls: ['./submissiondetails.component.css']
 })
-export class ShowsubmissionsComponent implements OnInit {
+export class SubmissiondetailsComponent implements OnInit {
+
+  
 
   
   submissionslist: any = [];
   empList: any = [];
   consultantList: any = [];
-  tempSubmissionlist: any = [];
+  tempMarketinglist: any = [];
   data: any = [];
   selectedValue: any;
   constructor(private service: SharedService) { };
@@ -20,9 +22,9 @@ export class ShowsubmissionsComponent implements OnInit {
   
   onRecruiterChange(item: any) {
     const value = item.target.value;
-    this.tempSubmissionlist = this.submissionslist;
+    this.tempMarketinglist = this.submissionslist;
     if (value != 'undefined') {
-      this.tempSubmissionlist = this.tempSubmissionlist.filter((submissionlistobj: any) => submissionlistobj.Consult_Full_Name === value);
+      this.tempMarketinglist = this.tempMarketinglist.filter((marketinglistobj: any) => marketinglistobj.Consult_Full_Name === value);
     }
 
   }
@@ -33,14 +35,13 @@ export class ShowsubmissionsComponent implements OnInit {
   }
 
   refreshsubmissionList() {
-    this.service.getsubmissionslist().subscribe((val: any) => {
+    this.service.getallsubmisssion().subscribe((val: any) => {
       this.submissionslist = val;
-      this.tempSubmissionlist = this.submissionslist;
+      this.tempMarketinglist = this.submissionslist;
     });
   }
-  onGotoDetails(item: any){
+  onlinkClick(item: any){
     const value = item.target.value;
-    alert(value);
   }
 
   getconsultantname() {

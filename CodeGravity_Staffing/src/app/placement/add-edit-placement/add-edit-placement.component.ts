@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-edit-placement.component.css']
 })
 export class AddEditPlacementComponent implements OnInit {
-  objPlacement = new addPlacement();
+  placement = new addPlacement();
   constructor(private service: SharedService, private router: Router) { }
 
   selectedValue: any;
@@ -31,12 +31,12 @@ export class AddEditPlacementComponent implements OnInit {
     this.getVisatypeList();
   }
   submitData(addnewplacement: addPlacement) {
-    addnewplacement.selectedEmpIdvalue = +(this.selectedEmpIdvalue);
-    addnewplacement.selectedConsultIdValue = +(this.selectedConsultIdValue);
-    addnewplacement.selectedtechIdValue = +(this.selectedtechIdValue);
-    addnewplacement.placementstatus = this.isChecked ? 1 : 0;
+    addnewplacement.Placed_Sales_Recruiter = +(this.selectedEmpIdvalue);
+    addnewplacement.Consult_id = +(this.selectedConsultIdValue);
+    addnewplacement.Placed_Tech = +(this.selectedtechIdValue);
+    addnewplacement.Placement_Status = this.isChecked ? 1 : 0;
     
-    this.service.addPlacement(addnewplacement).subscribe(res => {
+    this.service.AddNewPlacement(addnewplacement).subscribe(res => {
       alert('Market assignment  Added Successfully .....');
       this.router.navigate(['/placement']);
 

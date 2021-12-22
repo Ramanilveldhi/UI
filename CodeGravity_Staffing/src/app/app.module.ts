@@ -31,6 +31,8 @@ import { AddEditSubmissionComponent } from './submissions/add-edit-submission/ad
 import { CountryComponent } from './country/country.component';
 import { ShowcountryComponent } from './country/showcountry/showcountry.component';
 import { AddEditCountryComponent } from './country/add-edit-country/add-edit-country.component';
+import { SubmissiondetailsComponent } from './submissions/submissiondetails/submissiondetails.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 
 
@@ -61,12 +63,13 @@ import { AddEditCountryComponent } from './country/add-edit-country/add-edit-cou
     AddEditSubmissionComponent,
     CountryComponent,
     ShowcountryComponent,
-    AddEditCountryComponent
+    AddEditCountryComponent,
+    SubmissiondetailsComponent
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, AgGridModule.withComponents([]),
     HttpClientModule,ReactiveFormsModule,FormsModule,RouterModule
   ],
   providers: [SharedService],

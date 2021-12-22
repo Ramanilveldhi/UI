@@ -23,9 +23,9 @@ export class AddEditMarketComponent implements OnInit {
   isChecked: boolean = false;
   selectedTechValue: any;
   selectedvisaidValue: any;
-  Is_Open_To_All:any;
-  notes:any;
-  selectedidValue:any;
+  //Is_Open_To_All:any;
+  //notes:any;
+  //selectedidValue:any;
 
   ngOnInit(): void {
 

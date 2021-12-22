@@ -1,0 +1,22 @@
+export class addsubmission{
+    EmpIdvalue:any;  
+    ConsultIdValue:any;    
+    techIdValue:any;
+    PODate:any;
+    selectedVisaValue:any;
+    ProjStartdate:any;
+    Projectduration:any;
+    ProjEnddate:any;
+    Vendorname:any;
+    Vendoremail:any;
+    Vendorphone:any;
+    vendoraddress:any;
+    ClientName:any;clientemail:any;
+    clientphone:any;
+    clientaddress:any;
+    Projecttype:any;
+    Billrate:any;
+    consultpayrate:any;
+    Notes:any;
+    placementstatus:any;
+}

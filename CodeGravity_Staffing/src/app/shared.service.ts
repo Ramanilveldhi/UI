@@ -47,12 +47,15 @@ export class SharedService {
   getmarketinglist(): Observable<any[]> {
     return this.http.get<any>(this.ApiUrl + "/MarketingMaster")
   }
-  addmarketing(val: addMarketAssignment) {
+  addmarketing(val: any) {
     return this.http.post(this.ApiUrl + "/MarketingMaster", val);
   }
 
   getplacementlist(): Observable<any[]> {
     return this.http.get<any>(this.ApiUrl + "/PlacementMaster")
+  }
+  AddNewPlacement(val:any) {
+    return this.http.post(this.ApiUrl + "/PlacementMaster", val);
   }
   gettechnologieslist(): Observable<any[]> {
     return this.http.get<any>(this.ApiUrl + "/TechnologiesMaster")
@@ -61,6 +64,10 @@ export class SharedService {
   getsubmissionslist(): Observable<any[]> {
     return this.http.get<any>(this.ApiUrl + "/submissionsMaster")
   }
+  addmsubmission(val: any) {
+    return this.http.post(this.ApiUrl + "/submissionsMaster", val);
+  }
+  
   getVisatypelist(): Observable<any[]> {
     return this.http.get<any>(this.ApiUrl + "/visatypeMaster")
   }
@@ -73,7 +80,11 @@ export class SharedService {
   getincentivetypetlist(): Observable<any[]> {
     return this.http.get<any>(this.ApiUrl + "/IncentiveMaster")
   }
-  addPlacement(val: any) {
-    return this.http.post(this.ApiUrl + "/PlacementMaster", val);
+  getsubmisssionlist(): Observable<any[]> {
+    return this.http.get<any>(this.ApiUrl + "/SubmissionsMaster/Getlist")
   }
+  getallsubmisssion(): Observable<any[]> {
+    return this.http.get<any>(this.ApiUrl + "/SubmissionsMaster/GetAll")
+  }
+ 
 }
