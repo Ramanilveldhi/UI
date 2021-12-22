@@ -13,6 +13,16 @@ export class SharedService {
   readonly ApiUrl = "http://localhost:5000/api";
   constructor(private http: HttpClient) { }
 
+  private selectedMarketIem: any;
+
+  getSelectedMarketItem(){
+    return this.selectedMarketIem;
+  }
+
+  setSelectedMarketItem(marketItem: any){
+     this.selectedMarketIem = marketItem;
+  }
+
   getconsultlist(): Observable<any[]> {
     return this.http.get<any>(this.ApiUrl + "/ConsultantMaster")
   }
