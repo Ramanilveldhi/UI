@@ -30,12 +30,6 @@ export class AddEditMarketComponent implements OnInit {
   ngOnInit(): void {
     //Populate the Dropdown values
     this.getAllAPis();
-    // this.getEmployeeList();
-    // this.getConsultantList();
-    // this.getTechnologyList();
-    // this.getVisatypeList();
-
-    
   }
 
   getAllAPis(){
@@ -65,7 +59,7 @@ export class AddEditMarketComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    // alert('hello');
+    this.service.setSelectedMarketItem(null);
   }
 
   submitData(addmarket: addMarketAssignment) {

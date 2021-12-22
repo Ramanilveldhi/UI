@@ -48,12 +48,15 @@ export class ShowMarketListComponent implements OnInit {
     });
   }
 
-  editMarket(dataitem : any){
+  editMarket(dataitem: any) {
     this.isEdit = true;
-  this.selectedMarketItem=dataitem;
-this.service.setSelectedMarketItem(this.selectedMarketItem);
-   this.router.navigate(['/addMarketing/']);
+    this.selectedMarketItem = dataitem;
+    this.service.setSelectedMarketItem(this.selectedMarketItem);
+    this.router.navigate(['/addMarketing/']);
+  }
 
+  deleteMarket(dataitem: any){
+ // call delete API
   }
 
 
