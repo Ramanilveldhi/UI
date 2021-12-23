@@ -14,6 +14,9 @@ import { AddEditSubmissionComponent } from './submissions/add-edit-submission/ad
 import { ShowsubmissionsComponent } from './submissions/showsubmissions/showsubmissions.component';
 import {SubmissiondetailsComponent} from './submissions/submissiondetails/submissiondetails.component';
 // import { Ng2SmartTableModule } from 'ng2-smart-table';
+import {TestgridComponent} from './testgrid/testgrid.component'
+import {MatPaginator} from '@angular/material/paginator';
+
 
 const routes: Routes = [
   {path:'employee',component:EmployeeComponent},
@@ -27,7 +30,8 @@ const routes: Routes = [
   {path:'addplacement',component:AddEditPlacementComponent},
   {path:'submission',component:ShowsubmissionsComponent},
   {path:'addsubmission',component:AddEditSubmissionComponent},
-  {path:'submissiondet',component:SubmissiondetailsComponent}
+  {path:'submissiondet',component:SubmissiondetailsComponent},
+  {path:'test',component:TestgridComponent}
 
 
 ];

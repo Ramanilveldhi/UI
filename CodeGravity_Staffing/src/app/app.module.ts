@@ -32,8 +32,14 @@ import { CountryComponent } from './country/country.component';
 import { ShowcountryComponent } from './country/showcountry/showcountry.component';
 import { AddEditCountryComponent } from './country/add-edit-country/add-edit-country.component';
 import { SubmissiondetailsComponent } from './submissions/submissiondetails/submissiondetails.component';
-import { AgGridModule } from 'ag-grid-angular';
 
+
+import { Router } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { TestgridComponent } from './testgrid/testgrid.component';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MaterialExampleModule} from '../material.module';
 
 
 @NgModule({
@@ -64,13 +70,16 @@ import { AgGridModule } from 'ag-grid-angular';
     CountryComponent,
     ShowcountryComponent,
     AddEditCountryComponent,
-    SubmissiondetailsComponent
+    SubmissiondetailsComponent,
+    TestgridComponent,
+    
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, AgGridModule.withComponents([]),
-    HttpClientModule,ReactiveFormsModule,FormsModule,RouterModule
+    AppRoutingModule, 
+    HttpClientModule,ReactiveFormsModule,FormsModule,RouterModule, BrowserAnimationsModule,
+    MatSliderModule,MatNativeDateModule,MaterialExampleModule,
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

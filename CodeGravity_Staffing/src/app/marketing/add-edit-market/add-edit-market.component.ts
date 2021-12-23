@@ -23,9 +23,7 @@ export class AddEditMarketComponent implements OnInit {
   isChecked: boolean = false;
   selectedTechValue: any;
   selectedvisaidValue: any;
-  //Is_Open_To_All:any;
-  //notes:any;
-  //selectedidValue:any;
+  
 
   ngOnInit(): void {
     //Populate the Dropdown values
@@ -66,13 +64,14 @@ export class AddEditMarketComponent implements OnInit {
     addmarket.Consult_Id = +(this.selectedConsultantValue);
     addmarket.Assigned_Sales_Recruiter = +(this.selectedRecruiterValue);
     addmarket.Marketing_Tech = +(this.selectedTechValue);
-    addmarket.market_Status = this.isChecked ? 1 : 0;
-    // addmarket.Visa_Status = this.selectedvisaidValue;
+    addmarket.Marketing_Status = this.isChecked ? 1 : 0;
+    addmarket.Visa_Status = this.selectedvisaidValue;
     // addmarket.Visa_type = +(this.selectedVisaValue);
     if (addmarket.Id > 0) {
       // call update API here
 
-    } else {
+    } 
+    else {
       this.service.addmarketing(addmarket).subscribe(res => {
         alert('Market assignment  Added Successfully .....');
         this.router.navigate(['/market']);

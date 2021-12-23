@@ -8,6 +8,6 @@ export class addMarketAssignment{
     Marketing_End_Date:any;
     Visa_Status:any;
     Notes:any;
-    market_Status:any;
+    Marketing_Status:any;
     
 }
