@@ -29,12 +29,12 @@ export class SubmissiondetailsComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.refreshsubmissionList();
+    this.refreshsubmission();
     this.getconsultantname();
 
   }
 
-  refreshsubmissionList() {
+  refreshsubmission() {
     this.service.getallsubmisssion().subscribe((val: any) => {
       this.submissionslist = val;
       this.tempMarketinglist = this.submissionslist;
