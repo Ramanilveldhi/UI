@@ -14,9 +14,9 @@ export class AddEditSubmissionComponent implements OnInit {
   constructor(private service: SharedService, private router: Router) { }
 
   selectedValue: any;
-  selectedEmpIdvalue: any;
-  selectedConsultIdValue: any;
-  selectedtechIdValue: any;
+  Consult_id: any;
+  Recruiter_id: any;
+  Marketing_Tech: any;
   selectedVisaValue: any;
   employeelist: any = [];
   consultantlist: any = [];
@@ -31,10 +31,10 @@ export class AddEditSubmissionComponent implements OnInit {
     this.getVisatypeList();
   }
   submitData(addnewsubmission: addsubmission) {
-    addnewsubmission.EmpIdvalue = +(this.selectedEmpIdvalue);
-    addnewsubmission.ConsultIdValue = +(this.selectedConsultIdValue);
-    addnewsubmission.techIdValue = +(this.selectedtechIdValue);
-    addnewsubmission.placementstatus = this.isChecked ? 1 : 0;
+    addnewsubmission.Recruiter_id = +(this.Recruiter_id);
+    addnewsubmission.Consult_id = +(this.Consult_id);
+    addnewsubmission.Marketing_Tech = +(this.Marketing_Tech);
+    addnewsubmission.submission_status = this.isChecked ? 1 : 0;
     
     this.service.addmsubmission(addnewsubmission).subscribe(res => {
       //alert('placement Added Successfully .....');

@@ -17,7 +17,7 @@ export class AddEditPlacementComponent implements OnInit {
   selectedEmpIdvalue: any;
   selectedConsultIdValue: any;
   selectedtechIdValue: any;
-  selectedVisaValue: any;
+  selectedvisaIdValue : any;
   employeelist: any = [];
   consultantlist: any = [];
   technologylist: any = [];
@@ -35,7 +35,9 @@ export class AddEditPlacementComponent implements OnInit {
     addnewplacement.Consult_id = +(this.selectedConsultIdValue);
     addnewplacement.Placed_Tech = +(this.selectedtechIdValue);
     addnewplacement.Placement_Status = this.isChecked ? 1 : 0;
-    
+    addnewplacement.Created_by=+(this.selectedEmpIdvalue);
+    addnewplacement.Modified_by=+(this.selectedEmpIdvalue);
+    addnewplacement.Visa_Type=+(this.selectedvisaIdValue);
     this.service.AddNewPlacement(addnewplacement).subscribe(res => {
       alert('Market assignment  Added Successfully .....');
       this.router.navigate(['/placement']);

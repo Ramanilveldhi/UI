@@ -15,7 +15,7 @@
         <label for="inputConsultName">Consulatant Name</label>
         <select [(ngModel)]="selectedConsultIdValue" (change)="onRecruiterChange($event)" class="form-control">
           <option class="dropdown-item" disabled selected value="undefined">Select Consultant</option>
-          <option *ngFor="let item of consultantlist" [value]="item.Consult_id">{{item.Consult_Full_Name}}</option>
+          <option *ngFor="let item of consultantlist" [value]="item.Consult_Id">{{item.Consult_Full_Name}}</option>
         </select>
       </div>
       <div class="form-group col-md-3">
@@ -37,9 +37,9 @@
 
       <div class="form-group col-md-3">
         <label for="inputvisatype">Visa Type</label>
-        <select [(ngModel)]="selectedVisaValue" (change)="onVisaTypeChange($event)" class="form-control">
+        <select [(ngModel)]="selectedvisaIdValue" (change)="onVisaTypeChange($event)" class="form-control">
           <option class="dropdown-item" disabled selected value="undefined">Select Visa Type</option>
-          <option *ngFor="let item of visatypelist" [value]="item.id">{{item.Visa_Name}}</option>
+          <option *ngFor="let item of visatypelist" [value]="item.Id">{{item.Visa_Name}}</option>
         </select>
       </div>
       <div class="form-group col-md-3">

@@ -6,29 +6,29 @@
       <div class="form-row">
         <div class="form-group col-md-3">
           <label for="inputRecruiterName">Recruiter Name</label>
-          <select [(ngModel)]="selectedEmpIdvalue" (change)="onRecruiterChange($event)" class="form-control">
+          <select [(ngModel)]="Recruiter_id" (change)="onRecruiterChange($event)" class="form-control">
             <option class="dropdown-item" disabled selected value="undefined">Select Recruiter</option>
             <option *ngFor="let item of employeelist" [value]="item.Emp_Id">{{item.Emp_FullName}}</option>
           </select>
         </div>
         <div class="form-group col-md-3">
           <label for="inputConsultName">Consulatant Name</label>
-          <select [(ngModel)]="selectedConsultIdValue" (change)="onRecruiterChange($event)" class="form-control">
+          <select [(ngModel)]="Consult_id" (change)="onRecruiterChange($event)" class="form-control">
             <option class="dropdown-item" disabled selected value="undefined">Select Consultant</option>
             <option *ngFor="let item of consultantlist" [value]="item.Consult_Id">{{item.Consult_Full_Name}}</option>
           </select>
         </div>
         <div class="form-group col-md-3">
           <label for="inputtechnology">Technology</label>
-          <select [(ngModel)]=" selectedtechIdValue" (change)="onRecruiterChange($event)" class="form-control">
+          <select [(ngModel)]=" Marketing_Tech" (change)="onRecruiterChange($event)" class="form-control">
             <option class="dropdown-item" disabled selected value="undefined">Select Technology</option>
             <option *ngFor="let item of technologylist" [value]="item.Id">{{item.Technology_Name}}</option>
           </select>
         </div>
         <div class="form-group col-md-3">
           <label for="inputVendor_Name">Vendor Name</label>
-          <input type="email" class="form-control" id="inputpodate" placeholder="Tech systems,Modis,etc" name="placemnt_podate"
-            [(ngModel)]="objplacement.PODate">
+          <input type="email" class="form-control" id="inputpodate" placeholder="Tech systems,Modis,etc" name="submission_podate"
+            [(ngModel)]="objplacement.Vendor_Name">
         </div>
       </div>
   
@@ -39,24 +39,24 @@
         <div class="form-group col-md-3">
             <label for="inputVendor_POC_Name">Vendor SPOC's Name</label>
             <input type="email" class="form-control" id="inputProjstartdate" placeholder=""
-              name="placemnt_projstartdate" [(ngModel)]="objplacement.ProjStartdate">
+              name="submission_Vendorname" [(ngModel)]="objplacement.Vendor_POC_Name">
     
           </div>
         <div class="form-group col-md-3">
           <label for="inputVendor_POC_Email">Vendor SPOC's Email</label>
           <input type="email" class="form-control" id="inputProjstartdate" placeholder="example@domain.com"
-            name="placemnt_projstartdate" [(ngModel)]="objplacement.ProjStartdate">
+            name="submission_vendoremail" [(ngModel)]="objplacement.Vendor_POC_Email">
   
         </div>
         <div class="form-group col-md-3">
           <label for="inputVendor_POC_PhoneNumber">Vendor SPOC's PhoneNumber</label>
           <input type="email" class="form-control" id="inputprojectdur" placeholder=""
-            name="placemnt_projduration" [(ngModel)]="objplacement.Projectduration">
+            name="submission_projduration" [(ngModel)]="objplacement.Vendor_POC_PhoneNumber">
         </div>
         <div class="form-group col-md-3">
-          <label for="input[Vendor_Address]">Vendor Address</label>
+          <label for="inputVendor_Address">Vendor Address</label>
           <input type="text" class="form-control" id="inputenddate" placeholder=""
-            name="placemnt_projenddate" [(ngModel)]="objplacement.ProjEnddate">
+            name="submission_projenddate" [(ngModel)]="objplacement.Vendor_Address">
         </div>
   
       </div>
@@ -64,23 +64,23 @@
       <div class="form-row">
         <div class="form-group col-md-3">
           <label for="inputEnd_Client_Name">Client Name</label>
-          <input type="email" class="form-control" id="inputvendorname" placeholder="" name="placemnt_vendorname"
-            [(ngModel)]="objplacement.Vendorname">
+          <input type="text" class="form-control" id="inputvendorname" placeholder="" name="submission_vendorname"
+            [(ngModel)]="objplacement.End_Client_Name">
         </div>
         <div class="form-group col-md-3">
-            <label for="inputClientemail">Client SPOC's Name</label>
+            <label for="inputEnd_Client_POC_Name">Client SPOC's Name</label>
             <input type="text" class="form-control" id="inputclientaddress" placeholder=""
-              name="placemnt_clientaddress" [(ngModel)]="objplacement.clientemail">
+              name="submission_clientaddress" [(ngModel)]="objplacement.End_Client_POC_Name">
           </div>
         <div class="form-group col-md-3">
-          <label for="inputClient_POC_Name">Client SPOC's Email</label>
-          <input type="text" class="form-control" id="inputvendoraddress" placeholder="example@exmple.com"
-            name="placemnt_vendoraddress" [(ngModel)]="objplacement.Vendoremail">
+          <label for="inputClient_POC_Email">Client SPOC's Email</label>
+          <input type="email" class="form-control" id="inputvendoraddress" placeholder="example@exmple.com"
+            name="submission_vendoraddress" [(ngModel)]="objplacement.End_Client_POC_Email">
         </div>
         <div class="form-group col-md-3">
           <label for="inputvendorPhneNumber">Client SPOC's Phone Number</label>
-          <input type="text" class="form-control" id="inputvendorphone" placeholder="" name="placemnt_clientname"
-            [(ngModel)]="objplacement.Vendorphone">
+          <input type="text" class="form-control" id="inputvendorphone" placeholder="" name="submission_clientname"
+            [(ngModel)]="objplacement.End_Client_POC_PhoneNumber">
         </div>
         
   
@@ -88,24 +88,24 @@
       </div>
       <div class="form-row">
         <div class="form-group col-md-3">
-            <label for="inputvendoraddress">Client Address</label>
-            <input type="text" class="form-control" id="inputvendoraddress" placeholder="" name="placemnt_clientname"
-              [(ngModel)]="objplacement.vendoraddress">
+            <label for="inputclientaddress">Client Address</label>
+            <input type="text" class="form-control" id="inputvendoraddress" placeholder="" name="submission_clientname"
+              [(ngModel)]="objplacement.End_Client_Address">
           </div>
         <div class="form-group col-md-3">
           <label for="inputRate_confirmation">Rate confirmation</label>
           <input type="text" class="form-control" id="inputclientaddress" placeholder=""
-            name="placemnt_clientaddress" [(ngModel)]="objplacement.clientemail">
+            name="submission_clientaddress" [(ngModel)]="objplacement.Rate_confirmation">
         </div>
         <div class="form-group col-md-3">
           <label for="inputBill_Rate">Bill Rate</label>
-          <input type="text" class="form-control" id="inputclientphonenumber" placeholder="$" name="placemnt_clientaddress"
-            [(ngModel)]="objplacement.clientphone">
+          <input type="text" class="form-control" id="inputclientphonenumber" placeholder="$" name="submission_clientaddress"
+            [(ngModel)]="objplacement.Bill_Rate">
         </div>
         <div class="form-group col-md-3">
           <label for="inputAssignment_date">Assignment date</label>
-          <input type="text" class="form-control" id="inputclientaddress" placeholder="" name="placemnt_clientaddress"
-            [(ngModel)]="objplacement.clientaddress">
+          <input type="text" class="form-control" id="inputclientaddress" placeholder="" name="submission_clientaddress"
+            [(ngModel)]="objplacement.Assignment_date">
         </div>
   
       </div>
@@ -113,25 +113,32 @@
         <div class="form-group col-md-3">
           <label for="inputAssignment_status">Assignment status</label>
           <input type="text" class="form-control" id="inputprojectstatus" placeholder=""
-            name="placemnt_projectstatus" [(ngModel)]="objplacement.Projecttype">
+            name="submission_projectstatus" [(ngModel)]="objplacement.Assignment_status">
         </div>
         <div class="form-group col-md-3">
           <label for="inputAssignment_done_by">Assignment By</label>
-          <input type="email" class="form-control" id="inputbillrate" placeholder="" name="placemnt_billrate"
-            [(ngModel)]="objplacement.Billrate">
+          <input type="email" class="form-control" id="inputbillrate" placeholder="" name="submission_billrate"
+            [(ngModel)]="objplacement.Assignment_done_by">
         </div>
   
         <div class="form-group col-md-3">
           <label for="inputInterview_Schedudule_Date">Interview_Schedudule_Date</label>
           <input type="email" class="form-control" id="inputconspayrate" placeholder="MM/DD/YYYY"
-            name="placemnt_conspayrate" [(ngModel)]="objplacement.consultpayrate">
+            name="submission_conspayrate" [(ngModel)]="objplacement.Interview_Schedudule_Date">
         </div>
         <div class="form-group col-md-3">
           <label for="inputInterview_Status">Interview Status</label>
           <input type="text" class="form-control" id="inputnotes" placeholder="" name="market_visastatus"
-            [(ngModel)]="objplacement.Notes">
+            [(ngModel)]="objplacement.Interview_Status">
         </div>
   
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="inputNotes">Notes</label>
+          <input type="text" class="form-control" id="inputprojectstatus" placeholder=""
+            name="submission_projectstatus" [(ngModel)]="objplacement.Notes">
+        </div>
       </div>
   
   
