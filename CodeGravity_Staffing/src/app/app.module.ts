@@ -42,6 +42,11 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MaterialExampleModule} from '../material.module';
 import { AddEditIncentiveComponent } from './incentive/add-edit-incentive/add-edit-incentive.component';
 import { ShowIncentiveComponent } from './incentive/show-incentive/show-incentive.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -83,7 +88,11 @@ import { ShowIncentiveComponent } from './incentive/show-incentive/show-incentiv
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule,ReactiveFormsModule,FormsModule,RouterModule, BrowserAnimationsModule,
-    MatSliderModule,MatNativeDateModule,MaterialExampleModule,
+    MatSliderModule,MatNativeDateModule,MaterialExampleModule,MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

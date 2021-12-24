@@ -16,12 +16,14 @@ import {SubmissiondetailsComponent} from './submissions/submissiondetails/submis
 // import { Ng2SmartTableModule } from 'ng2-smart-table';
 import {TestgridComponent} from './testgrid/testgrid.component'
 import {MatPaginator} from '@angular/material/paginator';
+import { ShowIncentiveComponent } from './incentive/show-incentive/show-incentive.component';
+import { AddEditIncentiveComponent } from './incentive/add-edit-incentive/add-edit-incentive.component';
 
 
 const routes: Routes = [
   {path:'employee',component:EmployeeComponent},
   {path:'consultant',component:ConsultantComponent},
-  {path:'incentive',component:IncentiveComponent},
+  {path:'incentive',component:ShowIncentiveComponent},
   {path:'market',component:MarketingComponent},
   {path:'placement',component:PlacementComponent},
   {path:'addemployee',component:AddEditEmpComponent},
@@ -31,7 +33,8 @@ const routes: Routes = [
   {path:'submission',component:ShowsubmissionsComponent},
   {path:'addsubmission',component:AddEditSubmissionComponent},
   {path:'submissiondet',component:SubmissiondetailsComponent},
-  {path:'test',component:TestgridComponent}
+  {path:'test',component:TestgridComponent},
+  {path:'newincentive',component:AddEditIncentiveComponent}
 
 
 ];

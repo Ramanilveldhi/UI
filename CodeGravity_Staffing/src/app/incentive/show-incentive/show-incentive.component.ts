@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-show-incentive',
@@ -7,9 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowIncentiveComponent implements OnInit {
 
-  constructor() { }
+  
+  incentivelist: any = [];
+  empList: any = [];
+  consultantList: any = [];
+  tempMarketinglist: any = [];
+  data: any = [];
+  selectedValue: any;
+  constructor(private service: SharedService) { };
+ 
+  onRecruiterChange(item: any) { }
 
   ngOnInit(): void {
+    this.refreshsubmission();
+    this.getconsultantname();
+
   }
+
+  refreshsubmission() {
+    this.service.getallactiveincentives().subscribe((val: any) => {
+     
+      this.tempMarketinglist = val;
+    });
+  }
+  onlinkClick(item: any){
+    const value = item.target.value;
+  }
+
+  getconsultantname() { }
 
 }

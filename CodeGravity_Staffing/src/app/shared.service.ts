@@ -96,5 +96,7 @@ export class SharedService {
   getallsubmisssion(): Observable<any[]> {
     return this.http.get<any>(this.ApiUrl + "/SubmissionsMaster/GetAll")
   }
- 
+  getallactiveincentives(): Observable<any[]> {
+    return this.http.get<any>(this.ApiUrl + "/incentivemaster/GetAll")
+  }
 }

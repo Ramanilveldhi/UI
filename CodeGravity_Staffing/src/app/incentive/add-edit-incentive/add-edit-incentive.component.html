@@ -1,1 +1,166 @@
-<p>add-edit-incentive works!</p>
+<div>
+    <h4 style="color:rgb(253, 254, 255);background: rgb(112, 101, 134);" class="form-group col-md-12">Add Incentive
+      details </h4>
+  
+    <div style="border: 0pt solid black; ">
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="inputRecruiterName">Recruiter Name</label>
+          <select [(ngModel)]="selectedEmpIdvalue" (change)="onRecruiterChange($event)" class="form-control">
+            <option class="dropdown-item" disabled selected value="undefined">Select Recruiter</option>
+            <option *ngFor="let item of employeelist" [value]="item.Emp_Id">{{item.Emp_FullName}}</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputConsultName">Consulatant Name</label>
+          <select [(ngModel)]="selectedConsultIdValue" (change)="onRecruiterChange($event)" class="form-control">
+            <option class="dropdown-item" disabled selected value="undefined">Select Consultant</option>
+            <option *ngFor="let item of consultantlist" [value]="item.Consult_Id">{{item.Consult_Full_Name}}</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputConsultName">Incentive Type</label>
+            <select [(ngModel)]="selectedIncentiveIdValue" (change)="onRecruiterChange($event)" class="form-control">
+              <option class="dropdown-item" disabled selected value="undefined">Select Incentive</option>
+              <option *ngFor="let item of Incentivetypelist" [value]="item.Incentive_Id">{{item.Incentive_Type}}</option>
+            </select>
+          </div>
+        <div class="form-group col-md-3">
+            <label for="inputprojectStartdate">Project Start Date</label>
+            <input type="email" class="form-control" id="inputProjstartdate" placeholder="MM/DD/YYYY"
+              name="placemnt_projstartdate" [(ngModel)]="placement.Project_Start_Date" (focusout)="onFocusOutEvent($event)">  
+          </div>
+          
+        
+      </div>
+  
+  
+      <div class="form-row">
+  
+        
+        
+        <div class="form-group col-md-3">
+          <label for="inputProjduration">Term1_IncentivePeriod</label>
+          <input type="text" class="form-control" id="inputTerm1" placeholder=""
+            name="placemnt_projduration" [disabled]="true">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputprojenddate">Term1_IncentivepayableDate</label>
+          <input type="text" [disabled]="true"  class="form-control" id="inputenddate" placeholder=""
+            name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputprojenddate">Term1_IncentiveAmount</label>
+            <input type="text" class="form-control" id="inputenddate" placeholder="" [disabled]="true"
+              name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputprojenddate">Is_Term1_IncentivePaid</label>
+            <input type="text" class="form-control" id="inputenddate" placeholder=""
+              name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+          </div>
+  
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputProjduration">Term2_IncentivePeriod</label>
+            <input type="email" class="form-control" id="inputprojectdur" placeholder=""
+              name="placemnt_projduration" [(ngModel)]="placement.Project_Duration" [disabled]="true">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputprojenddate">Term2_IncentivepayableDate</label>
+            <input type="text" class="form-control" id="inputenddate" placeholder=""
+              name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+          </div>
+          <div class="form-group col-md-3">
+              <label for="inputprojenddate">Term2_IncentiveAmount</label>
+              <input type="text" class="form-control" id="inputenddate" placeholder=""
+                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputprojenddate">Is_Term2_IncentivePaid</label>
+              <input type="text" class="form-control" id="inputenddate" placeholder=""
+                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+            </div>
+  
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputProjduration">Term3_IncentivePeriod</label>
+            <input type="email" class="form-control" id="inputprojectdur" placeholder=""
+              name="placemnt_projduration" [(ngModel)]="placement.Project_Duration"[disabled]="true">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputprojenddate">Term3_IncentivepayableDate</label>
+            <input type="text" class="form-control" id="inputenddate" placeholder=""
+              name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date"[disabled]="true">
+          </div>
+          <div class="form-group col-md-3">
+              <label for="inputprojenddate">Term3_IncentiveAmount</label>
+              <input type="text" class="form-control" id="inputenddate" placeholder=""
+                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputprojenddate">Is_Term3_IncentivePaid</label>
+              <input type="text" class="form-control" id="inputenddate" placeholder=""
+                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date"[disabled]="true">
+            </div>
+  
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputProjduration">Term4_IncentivePeriod</label>
+            <input type="email" class="form-control" id="inputprojectdur" placeholder=""
+              name="placemnt_projduration" [(ngModel)]="placement.Project_Duration"[disabled]="true">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputprojenddate">Term4_IncentivepayableDate</label>
+            <input type="text" class="form-control" id="inputenddate" placeholder=""
+              name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+          </div>
+          <div class="form-group col-md-3">
+              <label for="inputprojenddate">Term4_IncentiveAmount</label>
+              <input type="text" class="form-control" id="inputenddate" placeholder=""
+                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date"[disabled]="true">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputprojenddate">Is_Term4_IncentivePaid</label>
+              <input type="text" class="form-control" id="inputenddate" placeholder=""
+                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date"[disabled]="true">
+            </div>
+  
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputNotes">Comments</label>
+            <input  type="text" class="form-control" disable id="inputnotes" placeholder="comments" name="market_visastatus"
+              [(ngModel)]="placement.Notes">
+          </div>
+        <div class="form-group col-md-3">
+          <label for="inputNotes">Note1</label>
+          <input type="text" class="form-control" id="inputnotes" placeholder="comments" name="market_visastatus"
+            [(ngModel)]="placement.Notes">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputNotes">Notes2</label>
+            <input type="text" class="form-control" id="inputnotes" placeholder="comments" name="market_visastatus"
+              [(ngModel)]="placement.Notes">
+          </div>
+      </div>
+  
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" [(ngModel)]="isChecked">
+          <label class="form-check-label" for="gridCheck">
+            Active
+          </label>
+        </div>
+      </div>
+  
+    </div>
+  
+    <button type="submit"  class="btn btn-primary" >
+       <a [routerLink]="['/incentive']" routerLinkActive="active"  class="nav-link" class="text-light">Save</a>   
+          </button>
+  </div>

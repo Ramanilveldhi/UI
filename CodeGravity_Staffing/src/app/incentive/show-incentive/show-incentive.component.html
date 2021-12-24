@@ -1,1 +1,44 @@
-<p>show-incentive works!</p>
+<div class="row" style="padding-bottom: 1.5px;">
+
+</div>
+<button  class="btn btn-primary " style="align-items: flex-end; float: right;" value="Save">
+    <a [routerLink]="['/newincentive']" routerLinkActive="active" class="nav-link" class="text-light">Add Incentive</a>
+</button>
+<table class="table table-striped">
+
+    <thead style="border: 1pt solid black; color:rgb(253, 254, 255);background: rgb(112, 101, 134);">
+        <tr>
+            <th>Id</th>
+            <th>Consultant Name</th>
+            <th>Recruiter Name</th>
+            <th>Project Start Date</th>
+            <th>Term I</th>
+            <th>Term II</th>
+            <th>Term III</th>
+            <th>Term IV</th>
+            <th>Status</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr class="bb" style="  border: 1pt solid black;" *ngFor="let dataitem of tempMarketinglist">
+            <td>{{dataitem.Id}}</td>
+            <td>{{dataitem.Consultant_Name}}</td>
+            <td>{{dataitem.Recruiter_Name}}</td>
+            <td>{{dataitem.Project_Start_Date}}</td>
+            <td>{{dataitem.Term1_IncentivepayableDate}}</td>
+            <td>{{dataitem.Term2_IncentivePayableDate}}</td>
+            <td>{{dataitem.Term3_IncentivePayableDate}}</td>
+            <td>{{dataitem.Term4_IncentivePayableDate}}</td>
+            <td>{{dataitem.Incentive_Status}}</td>
+
+
+
+        </tr>
+    </tbody>
+
+</table>
+<!-- <button type="submit" class="btn btn-primary " style="align-items: flex-end;" value="Save">
+    <a [routerLink]="['/submission']" routerLinkActive="active" class="nav-link" class="text-light">Back to list</a>
+</button> -->
