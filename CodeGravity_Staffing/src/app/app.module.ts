@@ -40,6 +40,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { TestgridComponent } from './testgrid/testgrid.component';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MaterialExampleModule} from '../material.module';
+import { AddEditIncentiveComponent } from './incentive/add-edit-incentive/add-edit-incentive.component';
+import { ShowIncentiveComponent } from './incentive/show-incentive/show-incentive.component';
 
 
 @NgModule({
@@ -72,6 +74,8 @@ import {MaterialExampleModule} from '../material.module';
     AddEditCountryComponent,
     SubmissiondetailsComponent,
     TestgridComponent,
+    AddEditIncentiveComponent,
+    ShowIncentiveComponent,
     
    
   ],
