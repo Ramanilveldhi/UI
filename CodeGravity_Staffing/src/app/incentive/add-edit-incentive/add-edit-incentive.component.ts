@@ -111,8 +111,7 @@ export class AddEditIncentiveComponent implements OnInit {
       d.setDate(d.getDate());
     }
     d.setMonth(d.getMonth() + 1)
-    //var FirstDay = new Date(d.getFullYear(), d.getMonth(), 1).toDateString()
-    //const  FirstDay = new Date(d.getFullYear(), d.getMonth(), 1).toLocaleDateString();
+    
     const term1 = new Date(d.getFullYear(), d.getMonth(), 1).toLocaleDateString();
     this.newincentive.Term1_IncentiveAmount = 9000;
     this.newincentive.Term1_IncentivepayableDate = term1;
