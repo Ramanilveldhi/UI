@@ -99,4 +99,7 @@ export class SharedService {
   getallactiveincentives(): Observable<any[]> {
     return this.http.get<any>(this.ApiUrl + "/incentivemaster/GetAll")
   }
+  addIncentive(val: any) {
+    return this.http.post(this.ApiUrl + "/incentivemaster", val);
+  }
 }

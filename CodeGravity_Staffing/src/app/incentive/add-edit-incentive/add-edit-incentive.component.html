@@ -27,8 +27,9 @@
           </div>
         <div class="form-group col-md-3">
             <label for="inputprojectStartdate">Project Start Date</label>
-            <input type="email" class="form-control" id="inputProjstartdate" placeholder="MM/DD/YYYY"
-              name="placemnt_projstartdate" [(ngModel)]="placement.Project_Start_Date" (focusout)="onFocusOutEvent($event)">  
+           
+            <input type="text" class="form-control" id="inputProjstartdate" placeholder="MM/DD/YYYY" 
+              name="placemnt_projstartdate" [(ngModel)]="newincentive.Project_Start_Date" (focusout)="onFocusOutEvent($event)">  
           </div>
           
         
@@ -42,22 +43,22 @@
         <div class="form-group col-md-3">
           <label for="inputProjduration">Term1_IncentivePeriod</label>
           <input type="text" class="form-control" id="inputTerm1" placeholder=""
-            name="placemnt_projduration" [disabled]="true">
+            name="placemnt_projduration" [disabled]="true" [(ngModel)]="newincentive.Term1_IncentivePeriod">
         </div>
         <div class="form-group col-md-3">
           <label for="inputprojenddate">Term1_IncentivepayableDate</label>
           <input type="text" [disabled]="true"  class="form-control" id="inputenddate" placeholder=""
-            name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date">
+            name="placemnt_projenddate" [(ngModel)]="newincentive.Term1_IncentivepayableDate">
         </div>
         <div class="form-group col-md-3">
             <label for="inputprojenddate">Term1_IncentiveAmount</label>
             <input type="text" class="form-control" id="inputenddate" placeholder="" [disabled]="true"
-              name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date">
+              name="placemnt_projenddate" [(ngModel)]="newincentive.Term1_IncentiveAmount">
           </div>
           <div class="form-group col-md-3">
             <label for="inputprojenddate">Is_Term1_IncentivePaid</label>
             <input type="text" class="form-control" id="inputenddate" placeholder=""
-              name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+              name="placemnt_projenddate" [(ngModel)]="newincentive.Is_Term1_IncentivePaid" [disabled]="true">
           </div>
   
       </div>
@@ -66,22 +67,22 @@
         <div class="form-group col-md-3">
             <label for="inputProjduration">Term2_IncentivePeriod</label>
             <input type="email" class="form-control" id="inputprojectdur" placeholder=""
-              name="placemnt_projduration" [(ngModel)]="placement.Project_Duration" [disabled]="true">
+              name="placemnt_projduration" [(ngModel)]="newincentive.Term2_IncentivePeriod" [disabled]="true">
           </div>
           <div class="form-group col-md-3">
             <label for="inputprojenddate">Term2_IncentivepayableDate</label>
             <input type="text" class="form-control" id="inputenddate" placeholder=""
-              name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+              name="placemnt_projenddate" [(ngModel)]="newincentive.Term2_IncentivePayableDate" [disabled]="true">
           </div>
           <div class="form-group col-md-3">
               <label for="inputprojenddate">Term2_IncentiveAmount</label>
               <input type="text" class="form-control" id="inputenddate" placeholder=""
-                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+                name="placemnt_projenddate" [(ngModel)]="newincentive.Term2_IncentiveAmount" [disabled]="true">
             </div>
             <div class="form-group col-md-3">
               <label for="inputprojenddate">Is_Term2_IncentivePaid</label>
               <input type="text" class="form-control" id="inputenddate" placeholder=""
-                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+                name="placemnt_projenddate" [(ngModel)]="newincentive.Is_Term2_IncentivePaid" [disabled]="true">
             </div>
   
       </div>
@@ -89,22 +90,22 @@
         <div class="form-group col-md-3">
             <label for="inputProjduration">Term3_IncentivePeriod</label>
             <input type="email" class="form-control" id="inputprojectdur" placeholder=""
-              name="placemnt_projduration" [(ngModel)]="placement.Project_Duration"[disabled]="true">
+              name="placemnt_projduration" [(ngModel)]="newincentive.Term3_IncentivePeriod"[disabled]="true">
           </div>
           <div class="form-group col-md-3">
             <label for="inputprojenddate">Term3_IncentivepayableDate</label>
             <input type="text" class="form-control" id="inputenddate" placeholder=""
-              name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date"[disabled]="true">
+              name="placemnt_projenddate" [(ngModel)]="newincentive.Term3_IncentivePayableDate"[disabled]="true">
           </div>
           <div class="form-group col-md-3">
               <label for="inputprojenddate">Term3_IncentiveAmount</label>
               <input type="text" class="form-control" id="inputenddate" placeholder=""
-                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+                name="placemnt_projenddate" [(ngModel)]="newincentive.Term3_IncentiveAmount" [disabled]="true">
             </div>
             <div class="form-group col-md-3">
               <label for="inputprojenddate">Is_Term3_IncentivePaid</label>
               <input type="text" class="form-control" id="inputenddate" placeholder=""
-                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date"[disabled]="true">
+                name="placemnt_projenddate" [(ngModel)]="newincentive.Is_Term3_IncentivePaid"[disabled]="true">
             </div>
   
       </div>
@@ -112,22 +113,22 @@
         <div class="form-group col-md-3">
             <label for="inputProjduration">Term4_IncentivePeriod</label>
             <input type="email" class="form-control" id="inputprojectdur" placeholder=""
-              name="placemnt_projduration" [(ngModel)]="placement.Project_Duration"[disabled]="true">
+              name="placemnt_projduration" [(ngModel)]="newincentive.Term4_IncentivePeriod"[disabled]="true">
           </div>
           <div class="form-group col-md-3">
             <label for="inputprojenddate">Term4_IncentivepayableDate</label>
             <input type="text" class="form-control" id="inputenddate" placeholder=""
-              name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date" [disabled]="true">
+              name="placemnt_projenddate" [(ngModel)]="newincentive.Term4_IncentivePayableDate" [disabled]="true">
           </div>
           <div class="form-group col-md-3">
               <label for="inputprojenddate">Term4_IncentiveAmount</label>
               <input type="text" class="form-control" id="inputenddate" placeholder=""
-                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date"[disabled]="true">
+                name="placemnt_projenddate" [(ngModel)]="newincentive.Term4_IncentiveAmount"[disabled]="true">
             </div>
             <div class="form-group col-md-3">
               <label for="inputprojenddate">Is_Term4_IncentivePaid</label>
               <input type="text" class="form-control" id="inputenddate" placeholder=""
-                name="placemnt_projenddate" [(ngModel)]="placement.Project_End_Date"[disabled]="true">
+                name="placemnt_projenddate" [(ngModel)]="newincentive.Is_Term4_IncentivePaid"[disabled]="true">
             </div>
   
       </div>
@@ -135,17 +136,17 @@
         <div class="form-group col-md-3">
             <label for="inputNotes">Comments</label>
             <input  type="text" class="form-control" disable id="inputnotes" placeholder="comments" name="market_visastatus"
-              [(ngModel)]="placement.Notes">
+              [(ngModel)]="newincentive.Comments">
           </div>
         <div class="form-group col-md-3">
           <label for="inputNotes">Note1</label>
           <input type="text" class="form-control" id="inputnotes" placeholder="comments" name="market_visastatus"
-            [(ngModel)]="placement.Notes">
+            [(ngModel)]="newincentive.Notes1">
         </div>
         <div class="form-group col-md-3">
             <label for="inputNotes">Notes2</label>
             <input type="text" class="form-control" id="inputnotes" placeholder="comments" name="market_visastatus"
-              [(ngModel)]="placement.Notes">
+              [(ngModel)]="newincentive.Notes2">
           </div>
       </div>
   
@@ -160,7 +161,7 @@
   
     </div>
   
-    <button type="submit"  class="btn btn-primary" >
-       <a [routerLink]="['/incentive']" routerLinkActive="active"  class="nav-link" class="text-light">Save</a>   
+    <button type="submit"  class="btn btn-primary" (click)="submitData(newincentive)">Save
+       <!-- <a [routerLink]="['/incentive']" routerLinkActive="active"  class="nav-link" class="text-light">Save</a>    -->
           </button>
   </div>
