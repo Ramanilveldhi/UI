@@ -92,7 +92,24 @@ export class AddEditIncentiveComponent implements OnInit {
     });
   }
   onFocusOutEvent(event: any) {
+    this.calcualateIncentive();
+
+
+  }
+  submitData(addincentive : addincentive) {
+    addincentive.Recruiter_Id = +(this.selectedEmpIdvalue);
+    addincentive.Consultant_Id = +(this.selectedConsultIdValue);
+    addincentive.IncentiveType  = +(this.selectedIncentiveIdValue);
+    addincentive.Incentive_Status = this.isChecked ? 1 : 0;
     
+    this.service.addIncentive(addincentive).subscribe(res => {
+      alert('Incentive  Added Successfully .....');
+      this.router.navigate(['/incentive']);
+      
+      
+    })
+  }
+  calcualateIncentive(){
     this.newincentive.Term1_IncentivepayableDate = this.newincentive.Project_Start_Date;
     this.mydate = this.newincentive.Project_Start_Date;
     const d = new Date(this.newincentive.Project_Start_Date);
@@ -163,21 +180,5 @@ export class AddEditIncentiveComponent implements OnInit {
     var FirstDay12 = new Date(oneYearFromNow.getFullYear(), oneYearFromNow.getMonth(), 1).toLocaleDateString();
 
 
-    this.newincentive.Term4_IncentivePayableDate = FirstDay12;
-
-
-  }
-  submitData(addincentive : addincentive) {
-    addincentive.Recruiter_Id = +(this.selectedEmpIdvalue);
-    addincentive.Consultant_Id = +(this.selectedConsultIdValue);
-    addincentive.IncentiveType  = +(this.selectedIncentiveIdValue);
-    addincentive.Incentive_Status = this.isChecked ? 1 : 0;
-    
-    this.service.addIncentive(addincentive).subscribe(res => {
-      alert('Incentive  Added Successfully .....');
-      this.router.navigate(['/incentive']);
-      
-      
-    })
-  }
+    this.newincentive.Term4_IncentivePayableDate = FirstDay12;}
 }

@@ -22,7 +22,7 @@
             <label for="inputConsultName">Incentive Type</label>
             <select [(ngModel)]="selectedIncentiveIdValue" (change)="onRecruiterChange($event)" class="form-control">
               <option class="dropdown-item" disabled selected value="undefined">Select Incentive</option>
-              <option *ngFor="let item of Incentivetypelist" [value]="item.Incentive_Id">{{item.Incentive_Type}}</option>
+              <option *ngFor="let item of Incentivetypelist" [value]="item.Incentive_Id">{{item.Incentive_Currency}}</option>
             </select>
           </div>
         <div class="form-group col-md-3">
