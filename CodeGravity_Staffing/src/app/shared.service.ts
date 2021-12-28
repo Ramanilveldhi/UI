@@ -27,7 +27,7 @@ export class SharedService {
     return this.http.get<any>(this.ApiUrl + "/ConsultantMaster")
   }
   addconsultant(val: any) {
-    return this.http.post(this.ApiUrl + "ConsultantMaster", val);
+    return this.http.post(this.ApiUrl + "/ConsultantMaster", val);
   }
   updateconsultant(val: any) {
     return this.http.put(this.ApiUrl + "ConsultantMaster", val);

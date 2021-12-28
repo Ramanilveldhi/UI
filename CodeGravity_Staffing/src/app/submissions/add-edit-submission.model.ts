@@ -1,9 +1,9 @@
 export class addsubmission{
     
     Id:any;
-    
+    NoOfSubmissions:any;
     Consult_id:any;
-   
+    Consult_Name:any;
     Recruiter_id:any;
     Recruiter_Name:any;
     Marketing_Tech:any;

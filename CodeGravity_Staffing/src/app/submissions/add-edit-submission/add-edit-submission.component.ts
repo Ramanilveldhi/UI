@@ -10,7 +10,7 @@ import { addsubmission } from '../add-edit-submission.model';
   styleUrls: ['./add-edit-submission.component.css']
 })
 export class AddEditSubmissionComponent implements OnInit {
-  objplacement = new addsubmission();
+  placement = new addsubmission();
   constructor(private service: SharedService, private router: Router) { }
 
   selectedValue: any;
@@ -35,6 +35,15 @@ export class AddEditSubmissionComponent implements OnInit {
     addnewsubmission.Consult_id = +(this.Consult_id);
     addnewsubmission.Marketing_Tech = +(this.Marketing_Tech);
     addnewsubmission.submission_status = this.isChecked ? 1 : 0;
+    addnewsubmission.Id=0;
+    addnewsubmission.NoOfSubmissions=0;
+    addnewsubmission.Consult_Name='';
+    addnewsubmission.Recruiter_Name='';
+    addnewsubmission.Created_by='';
+    addnewsubmission.Created_date='';
+    addnewsubmission.Created_by='';
+    addnewsubmission.Modified_Date='';
+    addnewsubmission.Modified_by='';
     
     this.service.addmsubmission(addnewsubmission).subscribe(res => {
       //alert('placement Added Successfully .....');
