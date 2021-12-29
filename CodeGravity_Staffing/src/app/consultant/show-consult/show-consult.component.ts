@@ -34,7 +34,7 @@ closeClick(){
 }
 
 refreshConsultantList(){
-  this.service.getconsultlist().subscribe((val: any)=>{
+  this.service.getallconsultlist().subscribe((val: any)=>{
     this.consultantlist=val;
   });
 }

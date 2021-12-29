@@ -39,7 +39,7 @@ export class AddEditPlacementComponent implements OnInit {
     addnewplacement.Modified_by=+(this.selectedEmpIdvalue);
     addnewplacement.Visa_Type=+(this.selectedvisaIdValue);
     this.service.AddNewPlacement(addnewplacement).subscribe(res => {
-      alert('Market assignment  Added Successfully .....');
+      alert('placement details Added Successfully .....');
       this.router.navigate(['/placement']);
 
 
@@ -56,7 +56,7 @@ export class AddEditPlacementComponent implements OnInit {
     });
   }
   getConsultantList() {
-    this.service.getconsultlist().subscribe((val: any) => {
+    this.service.getactivesubmissionconsultlist().subscribe((val: any) => {
       this.consultantlist = val;
     });
   }

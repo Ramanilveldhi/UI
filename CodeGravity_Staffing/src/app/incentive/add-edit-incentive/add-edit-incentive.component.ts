@@ -72,7 +72,7 @@ export class AddEditIncentiveComponent implements OnInit {
     });
   }
   getConsultantList() {
-    this.service.getconsultlist().subscribe((val: any) => {
+    this.service.getplacedconsultlist().subscribe((val: any) => {
       this.consultantlist = val;
     });
   }

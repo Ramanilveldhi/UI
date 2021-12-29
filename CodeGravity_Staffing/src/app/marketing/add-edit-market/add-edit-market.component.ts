@@ -32,7 +32,7 @@ export class AddEditMarketComponent implements OnInit {
 
   getAllAPis(){
     const empList : any = this.service.getemployeelist();
-    const consltList = this.service.getconsultlist();
+    const consltList = this.service.getactivemarketingconsultlist();
     const techList= this.service.gettechnologieslist();
     const visaList = this.service.getVisatypelist();
     // const combined = combineLatest(empList, consltList, techList, visaList);
@@ -98,7 +98,7 @@ export class AddEditMarketComponent implements OnInit {
     });
   }
   getConsultantList(val: any) {
-    this.service.getconsultlist().subscribe((val: any) => {
+    this.service.getactivemarketingconsultlist().subscribe((val: any) => {
       this.consultantlist = val;
     });
   }

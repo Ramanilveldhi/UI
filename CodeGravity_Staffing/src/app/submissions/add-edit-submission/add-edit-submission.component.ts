@@ -22,6 +22,8 @@ export class AddEditSubmissionComponent implements OnInit {
   consultantlist: any = [];
   technologylist: any = [];
   visatypelist: any = [];
+  tempMarketinglist: any = [];
+  marketinglist: any = [];
   isChecked: boolean = false;
 
   ngOnInit(): void {
@@ -29,32 +31,31 @@ export class AddEditSubmissionComponent implements OnInit {
     this.getConsultantList();
     this.getTechnologyList();
     this.getVisatypeList();
+    //this.getmarketingList();
   }
   submitData(addnewsubmission: addsubmission) {
     addnewsubmission.Recruiter_id = +(this.Recruiter_id);
     addnewsubmission.Consult_id = +(this.Consult_id);
     addnewsubmission.Marketing_Tech = +(this.Marketing_Tech);
     addnewsubmission.submission_status = this.isChecked ? 1 : 0;
-    addnewsubmission.Id=0;
-    addnewsubmission.NoOfSubmissions=0;
-    addnewsubmission.Consult_Name='';
-    addnewsubmission.Recruiter_Name='';
-    addnewsubmission.Created_by='';
-    addnewsubmission.Created_date='';
-    addnewsubmission.Created_by='';
-    addnewsubmission.Modified_Date='';
-    addnewsubmission.Modified_by='';
-    
+
     this.service.addmsubmission(addnewsubmission).subscribe(res => {
-      //alert('placement Added Successfully .....');
+
       this.router.navigate(['/submission']);
-      
+
 
     })
   }
   //submitData(){}
 
-  onRecruiterChange(recruiteritem: any) { }
+  onRecruiterChange(item: any) {
+    // const value = item.target.value;
+    // this.tempMarketinglist = this.marketinglist;
+    // if (value != 'undefined') {
+    //   this.tempMarketinglist = this.marketinglist.filter((marketinglistobj: any) => marketinglistobj.Recruiter_Id === value);
+    // }
+
+  }
   onVisaTypeChange(visaitem: any) { }
 
   getEmployeeList() {
@@ -63,7 +64,7 @@ export class AddEditSubmissionComponent implements OnInit {
     });
   }
   getConsultantList() {
-    this.service.getconsultlist().subscribe((val: any) => {
+    this.service.getactivesubmissionconsultlist().subscribe((val: any) => {
       this.consultantlist = val;
     });
   }
@@ -77,4 +78,11 @@ export class AddEditSubmissionComponent implements OnInit {
       this.visatypelist = val;
     });
   }
+  getmarketingList() {
+    this.service.getmarketinglist().subscribe((val: any) => {
+      this.marketinglist = val;
+      this.tempMarketinglist = this.marketinglist;
+    });
+  }
+
 }

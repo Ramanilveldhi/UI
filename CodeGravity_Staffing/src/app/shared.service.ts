@@ -23,18 +23,27 @@ export class SharedService {
      this.selectedMarketIem = marketItem;
   }
 
-  getconsultlist(): Observable<any[]> {
-    return this.http.get<any>(this.ApiUrl + "/ConsultantMaster")
+  getallconsultlist(): Observable<any[]> {
+    return this.http.get<any>(this.ApiUrl + "/ConsultantMaster/0")
+  }
+  getactivemarketingconsultlist(): Observable<any[]> {
+    return this.http.get<any>(this.ApiUrl + "/ConsultantMaster/1")
+  }
+  getactivesubmissionconsultlist(): Observable<any[]> {
+    return this.http.get<any>(this.ApiUrl + "/ConsultantMaster/2")
+  }
+  getplacedconsultlist(): Observable<any[]> {
+    return this.http.get<any>(this.ApiUrl + "/ConsultantMaster/3")
   }
   addconsultant(val: any) {
     return this.http.post(this.ApiUrl + "/ConsultantMaster", val);
   }
   updateconsultant(val: any) {
-    return this.http.put(this.ApiUrl + "ConsultantMaster", val);
+    return this.http.put(this.ApiUrl + "/ConsultantMaster", val);
   }
 
   deleteconsultant(val: any) {
-    return this.http.delete(this.ApiUrl + "ConsultantMaster", val);
+    return this.http.delete(this.ApiUrl + "/ConsultantMaster", val);
   }
 
 
@@ -102,7 +111,7 @@ export class SharedService {
     return this.http.get<any>(this.ApiUrl + "/SubmissionsMaster")
   }
   addmsubmission(val: any) {
-    return this.http.post(this.ApiUrl + "/SubmissionsMaster", val);
+    return this.http.post(this.ApiUrl + "/SubmissionsMaster/add", val);
   }
   
   

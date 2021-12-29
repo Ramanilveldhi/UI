@@ -45,7 +45,7 @@ export class SubmissiondetailsComponent implements OnInit {
   }
 
   getconsultantname() {
-    this.service.getconsultlist().subscribe((val: any) => {
+    this.service.getactivesubmissionconsultlist().subscribe((val: any) => {
       this.consultantList = val;
       this.data = this.consultantList;
     });
