@@ -20,9 +20,11 @@ export class AddEditSubmissionComponent implements OnInit {
   selectedVisaValue: any;
   employeelist: any = [];
   consultantlist: any = [];
+  tempconsultantlist: any = [];
   technologylist: any = [];
   visatypelist: any = [];
   tempMarketinglist: any = [];
+  temptechnologylist:any=[];
   marketinglist: any = [];
   isChecked: boolean = false;
 
@@ -40,7 +42,7 @@ export class AddEditSubmissionComponent implements OnInit {
     addnewsubmission.submission_status = this.isChecked ? 1 : 0;
 
     this.service.addmsubmission(addnewsubmission).subscribe(res => {
-
+      alert('New Submission Added Successfully .....');
       this.router.navigate(['/submission']);
 
 
@@ -52,10 +54,28 @@ export class AddEditSubmissionComponent implements OnInit {
     const value = item.target.value;
     this.tempMarketinglist = this.marketinglist;
     if (value != 'undefined') {
-      this.tempMarketinglist = this.marketinglist.filter((marketinglistobj: any) => marketinglistobj.Recruiter_Id === value);
+      this.tempMarketinglist = this.tempMarketinglist.filter((marketinglistobj: any) => marketinglistobj.Recruiter_Id == value);
     }
 
   }
+
+  onConsultChange(item: any) {
+    const value = item.target.value;
+    this.temptechnologylist = this.technologylist;
+    this.tempconsultantlist=this.consultantlist;
+
+
+    if (value != 'undefined') {
+
+      
+      this.tempconsultantlist = this.consultantlist.filter((consultlistobj: any) => consultlistobj.Consult_Id == value);
+      this.temptechnologylist = this.technologylist.filter((technologylist: any) => technologylist.Technology_Name === this.tempconsultantlist[0].Consult_Technology);
+
+      
+    }
+  }
+  onTechnologyChange(item: any) {}
+
   onVisaTypeChange(visaitem: any) { }
 
   getEmployeeList() {
@@ -81,7 +101,7 @@ export class AddEditSubmissionComponent implements OnInit {
   getmarketingList() {
     this.service.getmarketinglist().subscribe((val: any) => {
       this.marketinglist = val;
-      this.tempMarketinglist = this.marketinglist;
+      //this.tempMarketinglist = this.marketinglist;
     });
   }
 

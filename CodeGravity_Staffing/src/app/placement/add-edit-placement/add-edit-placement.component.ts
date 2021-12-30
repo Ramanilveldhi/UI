@@ -22,6 +22,10 @@ export class AddEditPlacementComponent implements OnInit {
   consultantlist: any = [];
   technologylist: any = [];
   visatypelist: any = [];
+  marketinglist:any=[];
+  tempMarketinglist:any=[];
+  temptechnologylist:any=[];
+  tempconsultantlist:any=[];
   isChecked: boolean = false;
 
   ngOnInit(): void {
@@ -29,6 +33,7 @@ export class AddEditPlacementComponent implements OnInit {
     this.getConsultantList();
     this.getTechnologyList();
     this.getVisatypeList();
+    this.getmarketingList();
   }
   submitData(addnewplacement: addPlacement) {
     addnewplacement.Placed_Sales_Recruiter = +(this.selectedEmpIdvalue);
@@ -47,7 +52,30 @@ export class AddEditPlacementComponent implements OnInit {
   }
   //submitData(){}
 
-  onRecruiterChange(recruiteritem: any) { }
+  onRecruiterChange(item: any) {
+    const value = item.target.value;
+    this.tempMarketinglist = this.marketinglist;
+    if (value != 'undefined') {
+      this.tempMarketinglist = this.tempMarketinglist.filter((marketinglistobj: any) => marketinglistobj.Recruiter_Id == value);
+    }
+
+  }
+
+  onConsultChange(item: any) {
+    const value = item.target.value;
+    this.temptechnologylist = this.technologylist;
+    this.tempconsultantlist=this.consultantlist;
+
+
+    if (value != 'undefined') {
+
+      
+      this.tempconsultantlist = this.consultantlist.filter((consultlistobj: any) => consultlistobj.Consult_Id == value);
+      this.temptechnologylist = this.technologylist.filter((technologylist: any) => technologylist.Technology_Name === this.tempconsultantlist[0].Consult_Technology);
+
+      
+    }
+  }
   onVisaTypeChange(visaitem: any) { }
 
   getEmployeeList() {
@@ -68,6 +96,12 @@ export class AddEditPlacementComponent implements OnInit {
   getVisatypeList() {
     this.service.getVisatypelist().subscribe((val: any) => {
       this.visatypelist = val;
+    });
+  }
+  getmarketingList() {
+    this.service.getmarketinglist().subscribe((val: any) => {
+      this.marketinglist = val;
+      //this.tempMarketinglist = this.marketinglist;
     });
   }
 }

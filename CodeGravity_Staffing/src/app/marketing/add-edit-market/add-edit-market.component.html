@@ -24,7 +24,7 @@
         <label for="inputRole">Technology</label>
         <select [(ngModel)]="selectedTechValue" (change)="onTechChange($event)" class="form-control">
           <option class="dropdown-item" disabled selected value="undefined">Select Technology</option>
-          <option *ngFor="let item of technologylist" [value]="item.Id">{{item.Technology_Name}}</option>
+          <option *ngFor="let item of tempTechnologylist" [value]="item.Id">{{item.Technology_Name}}</option>
         </select>
       </div>
 
@@ -56,9 +56,8 @@
         <label for="inputvisatype">Visa Type</label>
 
         <select [(ngModel)]="selectedvisaidValue" (change)="onVisaTypeChange($event)"  class="form-control">
-
           <option class="dropdown-item" disabled selected value="undefined">Select Visa</option>
-          <option *ngFor="let item of VisaList" [value]="item.Id">{{item.Visa_Name}}</option>
+          <option *ngFor="let item of tempVisaList" [value]="item.Id" >{{item.Visa_Name}}</option>
         </select>
       </div>
       <div class="form-group col-md-4">

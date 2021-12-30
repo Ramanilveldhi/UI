@@ -22,7 +22,7 @@ export class ShowsubmissionsComponent implements OnInit {
     const value = item.target.value;
     this.tempSubmissionlist = this.submissionslist;
     if (value != 'undefined') {
-      this.tempSubmissionlist = this.tempSubmissionlist.filter((submissionlistobj: any) => submissionlistobj.Consult_Full_Name === value);
+      this.tempSubmissionlist = this.submissionslist.filter((submissionlistobj: any) => submissionlistobj.Consult_id == value);
     }
 
   }

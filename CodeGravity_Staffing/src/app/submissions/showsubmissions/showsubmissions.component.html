@@ -1,14 +1,16 @@
 
 <div class="row" style="padding-bottom: 1.5px;">
-    <div class="col-6">
+    <div class=" col-md-6">
       <div class="div float-left m-2 ">
         Choose  Consultant :
         <select [(ngModel)]="selectedValue" (change)="onRecruiterChange($event)">
-          <option class="dropdown-item" selected value="undefined">All</option>
-          <option *ngFor="let item of data" [value]="item.Emp_FullName">{{item.Consult_Full_Name}}</option>
+          <option class="dropdown-item" selected value="undefined">All Active Marketing Consultant</option>
+          <option *ngFor="let item of data" [value]="item.Consult_Id">{{item.Consult_Full_Name}}</option>
         </select>
   
       </div>
+
+      
     </div>
     
     <div class="col align-self-end" style="padding-left: 300px;">

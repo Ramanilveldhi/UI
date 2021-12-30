@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
 import { addMarketAssignment } from './add-edit-market.model';
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { combineLatest, Observable, forkJoin } from 'rxjs';
 @Component({
   selector: 'app-add-edit-market',
@@ -12,28 +12,31 @@ export class AddEditMarketComponent implements OnInit {
   objMarketAssignement = new addMarketAssignment();
 
   constructor(private service: SharedService, private router: Router) { }
-@Input() selectedMarketItem:any;
+  @Input() selectedMarketItem: any;
   employeelist: any = [];
   consultantlist: any = [];
   technologylist: any = [];
   VisaList: any = [];
-
+  tempVisaList: any = [];
+  tempTechnologylist: any = [];
+  tempconsultlist: any = [];
   selectedConsultantValue: any;
   selectedRecruiterValue: any;
   isChecked: boolean = false;
   selectedTechValue: any;
   selectedvisaidValue: any;
-  
+  selectedconsultlist:any=[];
+
 
   ngOnInit(): void {
     //Populate the Dropdown values
     this.getAllAPis();
   }
 
-  getAllAPis(){
-    const empList : any = this.service.getemployeelist();
+  getAllAPis() {
+    const empList: any = this.service.getemployeelist();
     const consltList = this.service.getactivemarketingconsultlist();
-    const techList= this.service.gettechnologieslist();
+    const techList = this.service.gettechnologieslist();
     const visaList = this.service.getVisatypelist();
     // const combined = combineLatest(empList, consltList, techList, visaList);
     return forkJoin(empList, consltList, techList, visaList).subscribe(([emp, conslut, tech, visa]: any) => {
@@ -45,15 +48,15 @@ export class AddEditMarketComponent implements OnInit {
     });
   }
 
-  bindData(){
+  bindData() {
     if (this.service.getSelectedMarketItem() != null) {
-       this.employeelist;
+      this.employeelist;
 
       this.objMarketAssignement = this.service.getSelectedMarketItem();
       this.selectedConsultantValue = this.objMarketAssignement.Consult_Id;
-      this.selectedRecruiterValue =  this.employeelist.find((item: any) => item.Emp_FullName === this.objMarketAssignement.Assigned_Sales_Recruiter).Emp_Id;
-      this.selectedTechValue =  this.technologylist.find((item: any) => item.Technology_Name === this.objMarketAssignement.Marketing_Tech).Id;
-    } 
+      this.selectedRecruiterValue = this.employeelist.find((item: any) => item.Emp_Id === this.objMarketAssignement.Assigned_Sales_Recruiter).Emp_Id;
+      this.selectedTechValue = this.technologylist.find((item: any) => item.Id === this.objMarketAssignement.Marketing_Tech).Id;
+    }
   }
 
   ngOnDestroy(): void {
@@ -70,7 +73,7 @@ export class AddEditMarketComponent implements OnInit {
     if (addmarket.Id > 0) {
       // call update API here
 
-    } 
+    }
     else {
       this.service.addmarketing(addmarket).subscribe(res => {
         alert('Market assignment  Added Successfully .....');
@@ -80,9 +83,6 @@ export class AddEditMarketComponent implements OnInit {
 
   }
 
-  onConsultantChange(item: any) {
-
-  }
 
   onTechChange(item: any) {
 
@@ -113,17 +113,29 @@ export class AddEditMarketComponent implements OnInit {
     });
   }
 
-  onVisaTypeChange(visaitem:any){ 
-    
+  onVisaTypeChange(visaitem: any) {
+
     const value = visaitem.target.value;
-    this.selectedvisaidValue=value;
+    this.selectedvisaidValue = value;
   }
-  // onVisaChange(item: any) {
-  //   const value = item.target.value;
-  //   // this.tempMarketinglist = this.marketinglist;
-  //   // if (value != 'undefined') {
-  //   //   this.tempMarketinglist = this.tempMarketinglist.filter((marketinglistobj: any) => marketinglistobj.Assigned_Sales_Recruiter === value);
-  //   // }
-  // }
+
+  onConsultantChange(item: any) {
+    const value = item.target.value;
+    this.tempconsultlist = this.consultantlist;
+    if (value != 'undefined') {
+
+
+      this.selectedconsultlist = this.consultantlist.filter((consultlistobj: any) => consultlistobj.Consult_Id == value);
+      this.tempTechnologylist = this.technologylist.filter((techlistobj: any) => techlistobj.Technology_Name == this.selectedconsultlist[0].Consult_Technology);
+      this.tempVisaList = this.VisaList.filter((visalistobj: any) => visalistobj.Id == this.selectedconsultlist[0].Consult_VisaStatus);
+     
+     // this.tempTechnologylist =
+     
+      //let fruits: string[] =   this.selectedconsultlist ;
+
+    }
+
+  }
+
 
 }

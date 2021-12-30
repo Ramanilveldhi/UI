@@ -13,16 +13,16 @@
         </div>
         <div class="form-group col-md-3">
           <label for="inputConsultName">Consulatant Name</label>
-          <select [(ngModel)]="Consult_id" (change)="onRecruiterChange($event)" class="form-control">
+          <select [(ngModel)]="Consult_id" (change)="onConsultChange($event)" class="form-control">
             <option class="dropdown-item" disabled selected value="undefined">Select Consultant</option>
             <option *ngFor="let item of tempMarketinglist" [value]="item.Consult_Id">{{item.Consult_Name}}</option>
           </select>
         </div>
         <div class="form-group col-md-3">
           <label for="inputtechnology">Technology</label>
-          <select [(ngModel)]=" Marketing_Tech" (change)="onRecruiterChange($event)" class="form-control">
+          <select [(ngModel)]=" Marketing_Tech" (change)="onTechnologyChange($event)" class="form-control">
             <option class="dropdown-item" disabled selected value="undefined">Select Technology</option>
-            <option *ngFor="let item of technologylist" [value]="item.Id">{{item.Technology_Name}}</option>
+            <option *ngFor="let item of temptechnologylist" [value]="item.Id">{{item.Technology_Name}}</option>
           </select>
         </div>
         <div class="form-group col-md-3">
