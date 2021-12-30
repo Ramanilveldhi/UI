@@ -31,7 +31,7 @@ export class AddEditSubmissionComponent implements OnInit {
     this.getConsultantList();
     this.getTechnologyList();
     this.getVisatypeList();
-    //this.getmarketingList();
+    this.getmarketingList();
   }
   submitData(addnewsubmission: addsubmission) {
     addnewsubmission.Recruiter_id = +(this.Recruiter_id);
@@ -49,11 +49,11 @@ export class AddEditSubmissionComponent implements OnInit {
   //submitData(){}
 
   onRecruiterChange(item: any) {
-    // const value = item.target.value;
-    // this.tempMarketinglist = this.marketinglist;
-    // if (value != 'undefined') {
-    //   this.tempMarketinglist = this.marketinglist.filter((marketinglistobj: any) => marketinglistobj.Recruiter_Id === value);
-    // }
+    const value = item.target.value;
+    this.tempMarketinglist = this.marketinglist;
+    if (value != 'undefined') {
+      this.tempMarketinglist = this.marketinglist.filter((marketinglistobj: any) => marketinglistobj.Recruiter_Id === value);
+    }
 
   }
   onVisaTypeChange(visaitem: any) { }
