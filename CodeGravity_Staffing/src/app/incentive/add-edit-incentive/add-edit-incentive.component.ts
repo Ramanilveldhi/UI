@@ -24,6 +24,8 @@ export class AddEditIncentiveComponent implements OnInit {
   selectedvisaIdValue: any;
   employeelist: any = [];
   consultantlist: any = [];
+  tempconsultantlist:any=[];
+  marketinglist:any=[];
   technologylist: any = [];
   visatypelist: any = [];
   Incentivetypelist: any = [];
@@ -45,6 +47,7 @@ export class AddEditIncentiveComponent implements OnInit {
     this.getTechnologyList();
     this.getVisatypeList();
     this.getincentivetype();
+    this.getmarketingList();
   }
   // submitData(addnewplacement: addPlacement) {
   //   addnewplacement.Placed_Sales_Recruiter = +(this.selectedEmpIdvalue);
@@ -63,7 +66,20 @@ export class AddEditIncentiveComponent implements OnInit {
   // }
  
 
-  onRecruiterChange(recruiteritem: any) { }
+  onRecruiterChange(item: any) {
+    const value = item.target.value;
+    this.tempconsultantlist = this.marketinglist;
+    if (value != 'undefined') {
+      this.tempconsultantlist = this.marketinglist.filter((marketinglistobj: any) => marketinglistobj.Recruiter_Id == value);
+    }
+
+  }
+  getmarketingList() {
+    this.service.getmarketinglist().subscribe((val: any) => {
+      this.marketinglist = val;
+      //this.tempMarketinglist = this.marketinglist;
+    });
+  }
   onVisaTypeChange(visaitem: any) { }
 
   getEmployeeList() {

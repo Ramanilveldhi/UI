@@ -26,6 +26,7 @@ export class AddEditPlacementComponent implements OnInit {
   tempMarketinglist:any=[];
   temptechnologylist:any=[];
   tempconsultantlist:any=[];
+  tempVisaList: any = [];
   isChecked: boolean = false;
 
   ngOnInit(): void {
@@ -72,6 +73,7 @@ export class AddEditPlacementComponent implements OnInit {
       
       this.tempconsultantlist = this.consultantlist.filter((consultlistobj: any) => consultlistobj.Consult_Id == value);
       this.temptechnologylist = this.technologylist.filter((technologylist: any) => technologylist.Technology_Name === this.tempconsultantlist[0].Consult_Technology);
+      this.tempVisaList = this.visatypelist.filter((visalistobj: any) => visalistobj.Id == this.tempconsultantlist[0].Consult_VisaStatus);
 
       
     }
