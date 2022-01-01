@@ -149,7 +149,7 @@ export class AddEditIncentiveComponent implements OnInit {
     this.newincentive.Term1_IncentiveAmount = 9000;
     this.newincentive.Term1_IncentivepayableDate = term1;
     this.newincentive.Is_Term1_IncentivePaid = 0;
-    this.newincentive.Term1_IncentivePeriod = new Date(this.newincentive.Project_Start_Date).toLocaleDateString() + "---" + Term1inital.toLocaleDateString();
+    this.newincentive.Term1_IncentivePeriod = new Date(this.newincentive.Project_Start_Date).toLocaleDateString() + "____" + Term1inital.toLocaleDateString();
 
 
     const term = new Date(this.newincentive.Project_Start_Date);
@@ -165,7 +165,7 @@ export class AddEditIncentiveComponent implements OnInit {
     this.newincentive.Term2_IncentiveAmount = 9000;
     this.newincentive.Term2_IncentivePayableDate = term2;
     this.newincentive.Is_Term2_IncentivePaid = 0;
-    this.newincentive.Term2_IncentivePeriod = Term1inital.toLocaleDateString() + "---" + Term2inital.toLocaleDateString();
+    this.newincentive.Term2_IncentivePeriod = Term1inital.toLocaleDateString() + "____" + Term2inital.toLocaleDateString();
 
 
     const mytermdate = new Date(this.newincentive.Project_Start_Date);
@@ -179,7 +179,7 @@ export class AddEditIncentiveComponent implements OnInit {
     this.newincentive.Term3_IncentiveAmount = 9000;
     this.newincentive.Term3_IncentivePayableDate = term3;
     this.newincentive.Is_Term3_IncentivePaid = 0;
-    this.newincentive.Term3_IncentivePeriod = Term2inital.toLocaleDateString() + "---" + Term3inital.toLocaleDateString();
+    this.newincentive.Term3_IncentivePeriod = Term2inital.toLocaleDateString() + "____" + Term3inital.toLocaleDateString();
 
 
 
@@ -190,7 +190,7 @@ export class AddEditIncentiveComponent implements OnInit {
 
     this.newincentive.Term4_IncentiveAmount = 9000;
     this.newincentive.Is_Term4_IncentivePaid = 0;
-    this.newincentive.Term4_IncentivePeriod = Term3inital.toLocaleDateString() + "---" + oneYearFromNow.toLocaleDateString();
+    this.newincentive.Term4_IncentivePeriod = Term3inital.toLocaleDateString() + "____" + oneYearFromNow.toLocaleDateString();
 
     oneYearFromNow.setMonth(oneYearFromNow.getMonth() + 1)
     var FirstDay12 = new Date(oneYearFromNow.getFullYear(), oneYearFromNow.getMonth(), 1).toLocaleDateString();
