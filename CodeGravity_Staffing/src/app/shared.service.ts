@@ -113,6 +113,12 @@ export class SharedService {
   addmsubmission(val: any) {
     return this.http.post(this.ApiUrl + "/SubmissionsMaster/add", val);
   }
-  
+  // getincentivedetaisbydate(reportdate :any): Observable<any[]> {
+  //   return this.http.get<any>(this.ApiUrl + "IncentiveMaster/GetincentiveReportsByDate/"+reportdate)
+  // }
+
+  getincentivedetaisbydate(): Observable<any[]> {
+    return this.http.get<any>(this.ApiUrl + "IncentiveMaster/GetincentiveReportsByDate/2022-07-01")
+  }
   
 }

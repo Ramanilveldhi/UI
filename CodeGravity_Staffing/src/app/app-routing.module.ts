@@ -18,6 +18,8 @@ import {TestgridComponent} from './testgrid/testgrid.component'
 import {MatPaginator} from '@angular/material/paginator';
 import { ShowIncentiveComponent } from './incentive/show-incentive/show-incentive.component';
 import { AddEditIncentiveComponent } from './incentive/add-edit-incentive/add-edit-incentive.component';
+import { IncentivereportComponent } from './incentive/incentivereport/incentivereport.component';
+
 
 
 const routes: Routes = [
@@ -34,7 +36,9 @@ const routes: Routes = [
   {path:'addsubmission',component:AddEditSubmissionComponent},
   {path:'submissiondet',component:SubmissiondetailsComponent},
   {path:'test',component:TestgridComponent},
-  {path:'newincentive',component:AddEditIncentiveComponent}
+  {path:'newincentive',component:AddEditIncentiveComponent},
+  {path:'incentivereport',component:IncentivereportComponent},
+
 
 
 ];

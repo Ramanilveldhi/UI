@@ -48,6 +48,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoginComponent } from './login/login.component';
+import { IncentivereportComponent } from './incentive/incentivereport/incentivereport.component';
+import {DatePipe} from '@angular/common';
 
 
 @NgModule({
@@ -83,6 +85,7 @@ import { LoginComponent } from './login/login.component';
     AddEditIncentiveComponent,
     ShowIncentiveComponent,
     LoginComponent,
+    IncentivereportComponent,
     
    
   ],
@@ -96,7 +99,8 @@ import { LoginComponent } from './login/login.component';
     MatSortModule,
     MatProgressSpinnerModule
   ],
-  providers: [SharedService],
+  providers: [SharedService,DatePipe],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
