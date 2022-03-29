@@ -6,3 +6,8 @@ export interface Employee {
   Emp_Phone:any;
   
   }
+
+  export interface ILoginRequest {
+    username: string;
+    password: string;
+  }

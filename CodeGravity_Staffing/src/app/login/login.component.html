@@ -1,33 +1,58 @@
-<div class="container">
+<div class="loginbg">
     <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <h2 class="text-center text-dark mt-5">Login Here</h2>
-        <div class="text-center mb-5 text-dark">Codegravity IT Staffing</div>
-        <div class="card my-5">
+      <span style="font-size: 30px;
+      margin-top: 5%;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+      color: cornsilk;
+      margin-left: 35%;">       
+        CODEGRAVITY  IT  STAFFING
+      </span>
+      <div class="col-md-6 offset-md-3 mt-5">
+        <!-- <h2 class="text-center text-dark mt-5">Login Here</h2> -->
+        <!-- <div class="text-center mb-5 text-dark">Codegravity IT Staffing</div> -->
+       
+        <div class="card" style="width: 60%;margin-left: 20%;">
 
-          <form class="card-body cardbody-color p-lg-5">
-
+          <form class="card-body cardbody-color">
+            <h2 class="text-center text-dark mt-2">Login Here</h2>
             <div class="text-center">
               <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                width="200px" alt="profile">
+                width="100px" height="100px" alt="profile">
             </div>
-
-            <div class="mb-3">
-              <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
-                placeholder="User Name">
+            
+            <div>
+ 
+              <mat-form-field class="example-full-width w-100 pb-2">
+                <input matInput  [formControl]="emailFormControl" placeholder="Email" [(ngModel)]="loginData.username">  
+                <mat-error class="float-right"
+                  *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error class="float-right" *ngIf="emailFormControl.hasError('required')">
+                  Email is required
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width w-100 pt-1">
+                <input matInput [formControl]="passwordControl" placeholder="Enter your password"
+                  [(ngModel)]="loginData.password" type="password">
+                <mat-error class="float-right" *ngIf="passwordControl.hasError('required')">
+                  Password is required
+                </mat-error>
+              </mat-form-field>
+             <span style="color:red">
+              {{msg}}
+             </span> 
             </div>
-            <div class="mb-3">
-              <input type="password" class="form-control" id="password" placeholder="password">
+  
+            <div padding class="text-center mt-2">
+              <div class="text-center"><button type="submit" class="btn btn-outline-primary" (click)="submitData(loginData)"><span style="color: #5b5d61">LOGIN</span></button></div>
+              
             </div>
-            <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100" (click)="submitData()">Login</button></div>
-            <!-- <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
-              Registered? <a href="#" class="text-dark fw-bold"> Create an
-                Account</a>
-            </div> -->
           </form>
         </div>
 
       </div>
     </div>
   </div>
-  <router-outlet></router-outlet>
+  <!-- <router-outlet></router-outlet> -->

@@ -25,7 +25,7 @@ export class IncentivereportComponent implements OnInit {
     let report_date =this.datePipe.transform(new Date(this.selecteddate).toLocaleDateString(), 'yyyy-MM-dd');
 
     //alert(report_date);
-     this.service.getincentivedetaisbydate().subscribe((val: any) => {
+     this.service.getincentivedetaisbydate().subscribe((val: any[]) => {
      
       this.incentivelist = val;
     });

@@ -1,0 +1,65 @@
+<div class="container bg" style="border: rgb(87, 6, 6) 1;">
+    <ng-container>
+  <mat-toolbar class="example-header">
+    <h3> Staffing Management</h3> 
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark nav-item ">
+    
+        <ul class="navbar-nav">
+            <!-- <li class="nav-item">
+                <button routerlink="" class="m-1 btn btn-light btn-outline-primary" Button> Home</button> 
+            </li> -->
+            <li class="nav-item">
+              <button  class="m-1 btn btn-light btn-outline-primary"  class="btn btn-light" Button>
+               <a [routerLink]="['/employee']" routerLinkActive="active" >Employee</a> 
+            
+            </button> 
+            </li>
+    
+            <li class="nav-item">
+                <button 
+                 class="m-1 btn btn-light btn-outline-primary" class="btn btn-light"  Button>
+                 <a [routerLink]="['/consultant']" routerLinkActive="active">Consultant</a> </button> 
+            </li>
+            <li class="nav-item">
+                <button 
+                 class="m-1 btn btn-light btn-outline-primary" class="btn btn-light"  Button>
+                 <a [routerLink]="['/market']" routerLinkActive="active">Marketing </a> </button> 
+            </li>
+            <li class="nav-item">
+                <button 
+                 class="m-1 btn btn-light btn-outline-primary" class="btn btn-light"  Button>
+                 <a [routerLink]="['/submission']" routerLinkActive="active">Submissions </a> </button> 
+            </li>
+            <li class="nav-item">
+                <button 
+                 class="m-1 btn btn-light btn-outline-primary" class="btn btn-light"  Button>
+                 <a [routerLink]="['/placement']" routerLinkActive="active">Placements</a> </button> 
+            </li>
+    
+            <li class="nav-item">
+                <button 
+                 class="m-1 btn btn-light btn-outline-primary" class="btn btn-light"  Button>
+                 <a [routerLink]="['/incentive']" routerLinkActive="active">Incentives</a> 
+                </button> 
+            </li>
+            <!-- <li class="nav-item">
+                <button 
+                 class="m-1 btn btn-light btn-outline-primary" class="btn btn-light"  Button>
+                 <a [routerLink]="['/test']" routerLinkActive="active">Test</a> </button> 
+            </li> -->
+    
+        </ul>
+    </nav>
+    <p><button style="margin-left: 100px;
+        padding: 5px;
+        margin-top: 15px;
+        background-color: darkcyan;
+        color: aliceblue;
+        border-radius: 5px;" mat-button (click)="Logout()">Logout</button></p>
+  </mat-toolbar>
+
+ 
+</ng-container>
+   
+    
+</div>

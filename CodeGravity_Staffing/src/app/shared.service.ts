@@ -10,10 +10,21 @@ import { addMarketAssignment } from './marketing/add-edit-market/add-edit-market
 
 export class SharedService {
 
-  readonly ApiUrl = "http://localhost:5000/api";
+  readonly ApiUrl = "http://localhost:43472/api";
   constructor(private http: HttpClient) { }
 
   private selectedMarketIem: any;
+
+  Checklogindetails(username:string,password:string){
+if(username=="admin@gmail.com" && password=="admin")
+{
+  localStorage.setItem("username","admin@gmail.com");
+return true;
+}
+else{
+return false;
+}
+  }
 
   getSelectedMarketItem(){
     return this.selectedMarketIem;
@@ -118,7 +129,7 @@ export class SharedService {
   // }
 
   getincentivedetaisbydate(): Observable<any[]> {
-    return this.http.get<any>(this.ApiUrl + "IncentiveMaster/GetincentiveReportsByDate/2022-07-01")
+    return this.http.get<any>(this.ApiUrl + "/IncentiveMaster/GetincentiveReportsByDate/2022-07-01")
   }
   
 }

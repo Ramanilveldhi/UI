@@ -50,6 +50,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoginComponent } from './login/login.component';
 import { IncentivereportComponent } from './incentive/incentivereport/incentivereport.component';
 import {DatePipe} from '@angular/common';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './Guards/auth.guard';
 
 
 @NgModule({
@@ -86,6 +88,7 @@ import {DatePipe} from '@angular/common';
     ShowIncentiveComponent,
     LoginComponent,
     IncentivereportComponent,
+    HomeComponent,
     
    
   ],
@@ -99,7 +102,7 @@ import {DatePipe} from '@angular/common';
     MatSortModule,
     MatProgressSpinnerModule
   ],
-  providers: [SharedService,DatePipe],
+  providers: [SharedService,DatePipe,AuthGuard],
   
   bootstrap: [AppComponent]
 })

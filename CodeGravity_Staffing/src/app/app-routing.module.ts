@@ -19,26 +19,31 @@ import {MatPaginator} from '@angular/material/paginator';
 import { ShowIncentiveComponent } from './incentive/show-incentive/show-incentive.component';
 import { AddEditIncentiveComponent } from './incentive/add-edit-incentive/add-edit-incentive.component';
 import { IncentivereportComponent } from './incentive/incentivereport/incentivereport.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './Guards/auth.guard';
 
 
 
 const routes: Routes = [
-  {path:'employee',component:EmployeeComponent},
-  {path:'consultant',component:ConsultantComponent},
-  {path:'incentive',component:ShowIncentiveComponent},
-  {path:'market',component:MarketingComponent},
-  {path:'placement',component:PlacementComponent},
-  {path:'addemployee',component:AddEditEmpComponent},
-  {path:'addconsult',component:AddEditConsulComponent},
-  {path:'addMarketing',component:AddEditMarketComponent},
-  {path:'addplacement',component:AddEditPlacementComponent},
-  {path:'submission',component:ShowsubmissionsComponent},
-  {path:'addsubmission',component:AddEditSubmissionComponent},
-  {path:'submissiondet',component:SubmissiondetailsComponent},
-  {path:'test',component:TestgridComponent},
-  {path:'newincentive',component:AddEditIncentiveComponent},
-  {path:'incentivereport',component:IncentivereportComponent},
-
+   
+  {path:'home',component:HomeComponent,canActivate:[AuthGuard]},
+  {path:'employee',component:EmployeeComponent,canActivate:[AuthGuard]},
+  {path:'consultant',component:ConsultantComponent,canActivate:[AuthGuard]},
+  {path:'incentive',component:ShowIncentiveComponent,canActivate:[AuthGuard]},
+  {path:'market',component:MarketingComponent,canActivate:[AuthGuard]},
+  {path:'placement',component:PlacementComponent,canActivate:[AuthGuard]},
+  {path:'addemployee',component:AddEditEmpComponent,canActivate:[AuthGuard]},
+  {path:'addconsult',component:AddEditConsulComponent,canActivate:[AuthGuard]},
+  {path:'addMarketing',component:AddEditMarketComponent,canActivate:[AuthGuard]},
+  {path:'addplacement',component:AddEditPlacementComponent,canActivate:[AuthGuard]},
+  {path:'submission',component:ShowsubmissionsComponent,canActivate:[AuthGuard]},
+  {path:'addsubmission',component:AddEditSubmissionComponent,canActivate:[AuthGuard]},
+  {path:'submissiondet',component:SubmissiondetailsComponent,canActivate:[AuthGuard]},
+  {path:'test',component:TestgridComponent,canActivate:[AuthGuard]},
+  {path:'newincentive',component:AddEditIncentiveComponent,canActivate:[AuthGuard]},
+  {path:'incentivereport',component:IncentivereportComponent,canActivate:[AuthGuard]},
+  { path: '**',component:LoginComponent }, 
 
 
 ];
@@ -46,6 +51,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes) ],
   
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[]
 })
 export class AppRoutingModule { }
